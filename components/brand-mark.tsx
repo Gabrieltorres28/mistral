@@ -10,17 +10,17 @@ export function BrandMark({ className, compact = false }: BrandMarkProps) {
   return (
     <div
       className={cn(
-        "relative shrink-0",
-        compact ? "h-[52px] w-[190px] sm:h-[56px] sm:w-[220px]" : "h-[64px] w-[240px] sm:h-[72px] sm:w-[300px]",
+        "relative shrink-0 overflow-visible",
+        compact ? "h-[148px] w-[148px] sm:h-[160px] sm:w-[160px]" : "h-[168px] w-[168px] sm:h-[184px] sm:w-[184px]",
         className,
       )}
     >
       <Image
-        src="/logomistral-horizontal.png"
-        alt="Logo de Mistral Servicios Metalúrgicos"
+        src="/logo-ofiicial.png"
+        alt="Logo de S.V.M. Servicios Integrales"
         fill
         priority
-        sizes={compact ? "(max-width: 640px) 190px, 220px" : "(max-width: 640px) 240px, 300px"}
+        sizes={compact ? "(max-width: 640px) 148px, 160px" : "(max-width: 640px) 168px, 184px"}
         className="object-contain"
       />
     </div>

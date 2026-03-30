@@ -9,18 +9,18 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Mistral Servicios Metalúrgicos | Soluciones Industriales',
+  title: 'S.V.M. Servicios Integrales | Industria, Hotelería e Infraestructura',
   description:
-    'Empresa de servicios metalúrgicos especializada en fabricación, estructuras, soldaduras, montajes y mantenimiento industrial.',
+    'Servicios integrales para industria, hotelería e infraestructura: montajes, instalaciones, mantenimiento, pintura, revestimientos y soporte técnico.',
   icons: {
-    icon: '/logomistral.png',
-    shortcut: '/logomistral.png',
-    apple: '/logomistral.png',
+    icon: '/logo-ofiicial.png',
+    shortcut: '/logo-ofiicial.png',
+    apple: '/logo-ofiicial.png',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#4f946c',
+  themeColor: '#12924a',
   width: 'device-width',
   initialScale: 1,
 }
