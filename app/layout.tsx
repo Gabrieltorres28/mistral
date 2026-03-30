@@ -8,14 +8,42 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+const metadataBase = siteUrl ? new URL(siteUrl) : undefined
+const title = 'S.V.M. Servicios Integrales | Industria, Hotelería e Infraestructura'
+const description =
+  'Servicios integrales para industria, hotelería e infraestructura: montajes, instalaciones, mantenimiento, pintura, revestimientos y soporte técnico.'
+
 export const metadata: Metadata = {
-  title: 'S.V.M. Servicios Integrales | Industria, Hotelería e Infraestructura',
-  description:
-    'Servicios integrales para industria, hotelería e infraestructura: montajes, instalaciones, mantenimiento, pintura, revestimientos y soporte técnico.',
+  metadataBase,
+  title,
+  description,
+  applicationName: 'S.V.M. Servicios Integrales',
   icons: {
     icon: '/logo-ofiicial.png',
     shortcut: '/logo-ofiicial.png',
     apple: '/logo-ofiicial.png',
+  },
+  openGraph: {
+    title,
+    description,
+    siteName: 'S.V.M. Servicios Integrales',
+    locale: 'es_AR',
+    type: 'website',
+    images: [
+      {
+        url: '/logo-ofiicial.png',
+        width: 1024,
+        height: 1536,
+        alt: 'Logo de S.V.M. Servicios Integrales',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/logo-ofiicial.png'],
   },
 }
 
