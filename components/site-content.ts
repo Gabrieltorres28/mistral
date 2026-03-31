@@ -28,18 +28,42 @@ export const serviceGroups = [
   {
     title: "Montajes e instalaciones",
     description: "Ejecución de montajes eléctricos, instalaciones técnicas y trabajos coordinados para proyectos nuevos, ampliaciones y mejoras operativas.",
+    detailTitle: "Qué resuelve",
+    detailItems: [
+      "Montajes eléctricos y adecuaciones técnicas en obra.",
+      "Instalaciones para ampliaciones, mejoras y nuevas operaciones.",
+      "Coordinación de ejecución con foco en orden y cumplimiento.",
+    ],
   },
   {
     title: "Mantenimiento integral",
     description: "Soporte preventivo y correctivo para sostener continuidad operativa en edificios, hoteles, industrias y espacios de servicio.",
+    detailTitle: "Alcance operativo",
+    detailItems: [
+      "Mantenimiento preventivo para reducir interrupciones.",
+      "Intervenciones correctivas con respuesta rápida en sitio.",
+      "Seguimiento técnico para sostener funcionamiento y seguridad.",
+    ],
   },
   {
     title: "Pintura y revestimientos",
     description: "Pintura técnica, terminaciones y soluciones para pisos y superficies con foco en presentación, durabilidad y uso intensivo.",
+    detailTitle: "Aplicaciones",
+    detailItems: [
+      "Terminaciones para áreas operativas, comerciales y de servicio.",
+      "Revestimientos y pintura para superficies de alto uso.",
+      "Mejora visual y funcional con criterio técnico de mantenimiento.",
+    ],
   },
   {
     title: "Servicios para industria y hotelería",
     description: "Intervenciones adaptadas a entornos exigentes, con atención personalizada, cumplimiento y capacidad de respuesta en campo.",
+    detailTitle: "Valor agregado",
+    detailItems: [
+      "Adaptación al ritmo operativo de plantas, hoteles y organismos.",
+      "Atención directa para coordinar prioridades y tiempos reales.",
+      "Soluciones prácticas orientadas a continuidad y presentación.",
+    ],
   },
 ]
 
