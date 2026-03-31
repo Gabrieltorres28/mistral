@@ -64,7 +64,7 @@ export function Contact() {
                     title="Ubicación de Blessed Soluciones Integrales"
                     src={mapEmbedSrc}
                     className="h-full w-full"
-                    loading="lazy"
+                    loading="eager"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>

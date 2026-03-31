@@ -1,3 +1,4 @@
+import { PageLoader } from "@/components/page-loader"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -11,6 +12,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 export default function Home() {
   return (
     <>
+      <PageLoader />
       <Header />
       <main>
         <Hero />
