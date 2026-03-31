@@ -51,7 +51,7 @@ export function Clients() {
               }}
             >
               {marqueeItems.map((client, index) => (
-                <ClientChip key={`${client.name}-${index}`} name={client.name} logo={client.logo} />
+                <ClientChip key={client.name + "-" + index} name={client.name} logo={client.logo} />
               ))}
             </div>
           </div>

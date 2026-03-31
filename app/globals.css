@@ -76,7 +76,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-sans: var(--font-manrope), 'Manrope', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -136,6 +136,17 @@
       radial-gradient(circle at 50% 38%, rgba(18, 146, 74, 0.05), transparent 34%),
       linear-gradient(120deg, rgba(255, 255, 255, 0.35) 0%, rgba(228, 235, 226, 0.18) 100%);
     min-height: 100vh;
+    font-feature-settings: 'ss01' 1, 'cv01' 1, 'cv06' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.035em;
   }
 }
 
@@ -145,15 +156,17 @@
   }
 
   .section-kicker {
-    @apply text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary;
+    @apply text-[0.72rem] font-bold uppercase tracking-[0.24em] text-primary;
   }
 
   .section-title {
-    @apply text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl;
+    @apply text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl;
+    line-height: 0.98;
   }
 
   .section-copy {
     @apply text-sm leading-7 text-muted-foreground sm:text-base;
+    max-width: 66ch;
   }
 
   .industrial-panel {
