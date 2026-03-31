@@ -2,10 +2,10 @@ export const companyInfo = {
   name: "Blessed Soluciones Integrales",
   shortName: "Blessed",
   whatsapp: "https://wa.me/5491100000000",
-  phoneLabel: "+54 11 0000-0000",
-  phoneHref: "tel:+541100000000",
-  emailLabel: "contacto@blessedsolucionesintegrales.com",
-  emailHref: "mailto:contacto@blessedsolucionesintegrales.com",
+  phoneLabel: "+54 9 3757 52-4597",
+  phoneHref: "tel:+5493757524597",
+  emailLabel: "info@blessedsi.com",
+  emailHref: "mailto:info@blessedsi.com",
   location: "Barrio Industrial - Ruta Nacional N12, Wanda, Misiones",
 }
 

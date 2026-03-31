@@ -38,7 +38,7 @@ export function Footer() {
         <Reveal y={18}>
           <div className="industrial-panel overflow-hidden border-white/75 bg-[linear-gradient(145deg,rgba(255,255,255,0.96),rgba(241,245,239,0.96))] p-6 sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.45fr_0.62fr_0.83fr] lg:gap-10">
-              <div className="max-w-2xl">
+              <div className="min-w-0 max-w-2xl">
                 <p className="section-kicker">Cierre institucional</p>
                 <BrandMark variant="footer" className="mt-4 h-[210px] w-[460px] sm:h-[228px] sm:w-[510px] lg:h-[248px] lg:w-[560px]" />
                 <p className="mt-4 max-w-lg text-sm leading-7 text-muted-foreground sm:text-[15px]">

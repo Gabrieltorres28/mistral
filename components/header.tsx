@@ -14,9 +14,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full overflow-visible border-b border-border/70 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
       <div className="section-shell overflow-visible py-0">
-        <div className="flex min-h-[92px] items-center justify-between gap-3 overflow-visible lg:min-h-[98px] lg:gap-6">
-          <Link href="/" className="-my-5 shrink-0 overflow-visible sm:-my-6 lg:-my-10">
-            <BrandMark variant="header" className="h-[126px] w-[396px] sm:h-[142px] sm:w-[448px] lg:h-[176px] lg:w-[560px]" />
+        <div className="flex min-h-[72px] items-center justify-between gap-3 overflow-visible sm:min-h-[86px] lg:min-h-[98px] lg:gap-6">
+          <Link href="/" className="-my-2 shrink-0 overflow-visible sm:-my-4 lg:-my-10">
+            <BrandMark variant="header" className="h-[78px] w-[246px] sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]" />
           </Link>
 
           <div className="hidden lg:flex shrink-0 items-center gap-4 rounded-[1.2rem] border border-border/80 bg-white/82 px-3 py-1.5 shadow-[0_10px_22px_rgba(23,34,28,0.05)] xl:px-3.5">

@@ -123,10 +123,12 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
     background-image:
       linear-gradient(180deg, rgba(247, 249, 245, 0.97) 0%, rgba(238, 243, 236, 0.985) 56%, rgba(246, 248, 244, 0.98) 100%),
       radial-gradient(circle at top left, rgba(18, 146, 74, 0.15), transparent 28%),
