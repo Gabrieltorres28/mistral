@@ -4,10 +4,8 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
-const preloadAssets = [
-  "/logo-prestania.png",
-  "/logo-headerr.png",
-  "/logo-footer.png",
+const criticalAssets = ["/logo-prestania.png", "/logo-headerr.png", "/logo-footer.png"]
+const backgroundAssets = [
   "/arauco.png",
   "/aeropuerto.png",
   "/dutyshop.png",
@@ -29,15 +27,21 @@ function preloadImage(src: string) {
   })
 }
 
-function waitForWindowLoad() {
+function waitForDocumentReady() {
   return new Promise<void>((resolve) => {
-    if (document.readyState === "complete") {
+    if (document.readyState === "interactive" || document.readyState === "complete") {
       resolve()
       return
     }
 
-    const onLoad = () => resolve()
-    window.addEventListener("load", onLoad, { once: true })
+    const onReady = () => {
+      if (document.readyState === "interactive" || document.readyState === "complete") {
+        resolve()
+        document.removeEventListener("readystatechange", onReady)
+      }
+    }
+
+    document.addEventListener("readystatechange", onReady)
   })
 }
 
@@ -57,22 +61,26 @@ export function PageLoader() {
   useEffect(() => {
     document.body.style.overflow = "hidden"
 
+    backgroundAssets.forEach((src) => {
+      void preloadImage(src)
+    })
+
     const run = async () => {
       await Promise.all([
-        Promise.all(preloadAssets.map(preloadImage)),
+        Promise.all(criticalAssets.map(preloadImage)),
         document.fonts?.ready ?? Promise.resolve(),
         Promise.race([
-          waitForWindowLoad(),
-          new Promise<void>((resolve) => window.setTimeout(resolve, 2600)),
+          waitForDocumentReady(),
+          new Promise<void>((resolve) => window.setTimeout(resolve, 900)),
         ]),
-        new Promise<void>((resolve) => window.setTimeout(resolve, 1100)),
+        new Promise<void>((resolve) => window.setTimeout(resolve, 650)),
       ])
 
       setIsClosing(true)
       window.setTimeout(() => {
         setIsVisible(false)
         document.body.style.overflow = ""
-      }, 420)
+      }, 260)
     }
 
     run()
@@ -89,7 +97,7 @@ export function PageLoader() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[120] flex items-center justify-center bg-[linear-gradient(180deg,rgba(248,250,246,0.985),rgba(239,244,237,0.99))] px-6 transition-opacity duration-400",
+        "fixed inset-0 z-[120] flex items-center justify-center bg-[linear-gradient(180deg,rgba(248,250,246,0.985),rgba(239,244,237,0.99))] px-6 transition-opacity duration-300",
         isClosing ? "pointer-events-none opacity-0" : "opacity-100",
       )}
     >
