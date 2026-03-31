@@ -16,7 +16,7 @@ export function Header() {
       <div className="section-shell overflow-visible py-0">
         <div className="flex min-h-[76px] items-center justify-between gap-3 overflow-visible sm:min-h-[86px] lg:min-h-[98px] lg:gap-6">
           <Link href="/" className="-my-3 shrink-0 overflow-visible sm:-my-4 lg:-my-10">
-            <BrandMark variant="header" className="h-[92px] w-[290px] sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]" />
+            <BrandMark variant="header" className="h-[102px] w-[320px] sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]" />
           </Link>
 
           <div className="hidden lg:flex shrink-0 items-center gap-4 rounded-[1.2rem] border border-border/80 bg-white/82 px-3 py-1.5 shadow-[0_10px_22px_rgba(23,34,28,0.05)] xl:px-3.5">
@@ -60,7 +60,7 @@ export function Header() {
               >
                 <div className="flex h-full flex-col gap-6 pt-5">
                   <div className="min-w-0 rounded-[1.45rem] border border-border/80 bg-white/90 p-4 shadow-[0_16px_36px_rgba(23,34,28,0.06)]">
-                    <BrandMark variant="header" mobile className="h-[88px] w-[278px] sm:h-[96px] sm:w-[304px]" />
+                    <BrandMark variant="header" mobile className="h-[96px] w-[304px] sm:h-[102px] sm:w-[320px]" />
                     <div className="mt-4 rounded-[1.1rem] border border-primary/12 bg-primary/[0.04] px-4 py-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">Respuesta operativa</p>
                       <p className="mt-2 text-sm leading-6 text-muted-foreground">
