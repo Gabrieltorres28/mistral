@@ -6,8 +6,9 @@ const icons = [Drill, Wrench, Paintbrush, Settings2]
 
 export function Services() {
   return (
-    <section id="servicios" className="py-16 sm:py-20 lg:py-24">
-      <div className="section-shell">
+    <section id="servicios" className="relative py-16 sm:py-20 lg:py-24">
+      <div className="absolute inset-0 section-band opacity-90" />
+      <div className="section-shell relative">
         <Reveal className="mx-auto max-w-3xl text-center" y={18}>
           <p className="section-kicker">Servicios</p>
           <h2 className="section-title mt-3">Servicios organizados para comunicar mejor qué vende la empresa hoy</h2>
@@ -23,10 +24,10 @@ export function Services() {
               <Reveal key={service.title} delay={index * 80} y={22}>
                 <article className="industrial-panel h-full p-6 sm:p-7">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/12 text-primary surface-glow">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/75">
+                    <span className="rounded-full border border-primary/10 bg-white/72 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/80">
                       0{index + 1}
                     </span>
                   </div>

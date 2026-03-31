@@ -6,8 +6,9 @@ const icons = [Handshake, ClipboardCheck, ScanSearch]
 
 export function About() {
   return (
-    <section id="nosotros" className="py-16 sm:py-20 lg:py-24">
-      <div className="section-shell">
+    <section id="nosotros" className="relative py-16 sm:py-20 lg:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(18,146,74,0.08),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.3),rgba(244,247,241,0.52))]" />
+      <div className="section-shell relative">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-10">
           <Reveal className="industrial-panel p-6 sm:p-8 lg:p-10" y={18}>
             <p className="section-kicker">Quiénes somos</p>
@@ -15,7 +16,7 @@ export function About() {
               Una empresa de Misiones orientada a resolver necesidades técnicas y operativas con criterio integral
             </h2>
             <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">
-              S.V.M. Servicios Integrales es una empresa de Misiones orientada a brindar soluciones técnicas y operativas para industrias, hoteles, empresas e infraestructura en toda la región. Trabajamos con una visión integral, acompañando a cada cliente con servicios que abarcan montajes, mantenimiento, instalaciones, pintura, revestimientos y soporte técnico especializado. Contamos con un equipo comprometido con la calidad de ejecución, el cumplimiento y la atención personalizada, ofreciendo soluciones prácticas, seguras y adaptadas a cada necesidad.
+              Blessed Soluciones Integrales es una empresa de Misiones orientada a brindar soluciones técnicas y operativas para industrias, hoteles, empresas e infraestructura en toda la región. Trabajamos con una visión integral, acompañando a cada cliente con servicios que abarcan montajes, mantenimiento, instalaciones, pintura, revestimientos y soporte técnico especializado. Contamos con un equipo comprometido con la calidad de ejecución, el cumplimiento y la atención personalizada, ofreciendo soluciones prácticas, seguras y adaptadas a cada necesidad.
             </p>
           </Reveal>
 

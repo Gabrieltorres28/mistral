@@ -3,25 +3,45 @@ import { cn } from "@/lib/utils"
 
 type BrandMarkProps = {
   className?: string
-  compact?: boolean
+  variant?: "header" | "footer"
+  mobile?: boolean
 }
 
-export function BrandMark({ className, compact = false }: BrandMarkProps) {
+const brandConfig = {
+  header: {
+    src: "/logo-headerr.png",
+    alt: "Logo de Blessed Soluciones Integrales",
+    defaultSize: "h-[126px] w-[396px] sm:h-[142px] sm:w-[448px] lg:h-[176px] lg:w-[560px]",
+    mobileSize: "h-[126px] w-[396px]",
+    sizes: "(max-width: 640px) 396px, (max-width: 1024px) 448px, 560px",
+  },
+  footer: {
+    src: "/logo-footer.png",
+    alt: "Logo de Blessed Soluciones Integrales con claim institucional",
+    defaultSize: "h-[164px] w-[382px] sm:h-[176px] sm:w-[420px] lg:h-[196px] lg:w-[468px]",
+    mobileSize: "h-[170px] w-[392px]",
+    sizes: "(max-width: 640px) 392px, (max-width: 1024px) 420px, 468px",
+  },
+} as const
+
+export function BrandMark({ className, variant = "header", mobile = false }: BrandMarkProps) {
+  const config = brandConfig[variant]
+
   return (
     <div
       className={cn(
         "relative shrink-0 overflow-visible",
-        compact ? "h-[148px] w-[148px] sm:h-[160px] sm:w-[160px]" : "h-[168px] w-[168px] sm:h-[184px] sm:w-[184px]",
+        mobile ? config.mobileSize : config.defaultSize,
         className,
       )}
     >
       <Image
-        src="/logo-ofiicial.png"
-        alt="Logo de S.V.M. Servicios Integrales"
+        src={config.src}
+        alt={config.alt}
         fill
         priority
-        sizes={compact ? "(max-width: 640px) 148px, 160px" : "(max-width: 640px) 168px, 184px"}
-        className="object-contain"
+        sizes={config.sizes}
+        className="object-contain object-left"
       />
     </div>
   )

@@ -1,8 +1,12 @@
 import Link from "next/link"
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import { ExternalLink, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 import { Button } from "@/components/ui/button"
 import { companyInfo } from "@/components/site-content"
+
+const mapQuery = encodeURIComponent(companyInfo.location)
+const mapEmbedSrc = `https://maps.google.com/maps?q=${mapQuery}&t=m&z=15&output=embed`
+const mapOpenHref = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`
 
 const contactItems = [
   {
@@ -16,12 +20,6 @@ const contactItems = [
     label: "Email",
     value: companyInfo.emailLabel,
     href: companyInfo.emailHref,
-  },
-  {
-    icon: MapPin,
-    label: "Ubicación",
-    value: companyInfo.location,
-    href: "#contacto",
   },
 ]
 
@@ -59,9 +57,36 @@ export function Contact() {
                   <Link href={companyInfo.emailHref}>Enviar consulta por email</Link>
                 </Button>
               </div>
+
+              <div className="mt-8 rounded-[1.6rem] border border-border bg-white/92 p-3 shadow-[0_20px_44px_rgba(20,31,26,0.06)] sm:p-4">
+                <div className="relative aspect-[16/11] overflow-hidden rounded-[1.2rem] border border-border/80 bg-secondary/40 sm:aspect-[16/10]">
+                  <iframe
+                    title="Ubicación de Blessed Soluciones Integrales"
+                    src={mapEmbedSrc}
+                    className="h-full w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="mt-4 flex min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">Ubicación</p>
+                    <p className="mt-2 break-words text-sm font-medium leading-6 text-foreground sm:text-base">{companyInfo.location}</p>
+                  </div>
+                  <Link
+                    href={mapOpenHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary/25 hover:text-primary"
+                  >
+                    Ver en Google Maps
+                    <ExternalLink className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <div className="grid gap-4 min-w-0">
+            <div className="grid gap-4 min-w-0 content-start">
               {contactItems.map((item, index) => (
                 <Reveal key={item.label} delay={index * 80} y={18}>
                   <Link
@@ -78,6 +103,22 @@ export function Contact() {
                   </Link>
                 </Reveal>
               ))}
+
+              <Reveal delay={160} y={18}>
+                <div className="rounded-[1.5rem] border border-border bg-white/92 p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <MapPin className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">Cobertura</p>
+                      <p className="mt-2 break-words text-sm font-medium leading-6 text-foreground sm:text-base">
+                        Base operativa en Wanda, Misiones, con atención a industria, hotelería e infraestructura en la región.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </Reveal>

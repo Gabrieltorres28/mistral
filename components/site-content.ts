@@ -1,17 +1,18 @@
 export const companyInfo = {
-  name: "S.V.M. Servicios Integrales",
-  shortName: "S.V.M.",
+  name: "Blessed Soluciones Integrales",
+  shortName: "Blessed",
   whatsapp: "https://wa.me/5491100000000",
   phoneLabel: "+54 11 0000-0000",
   phoneHref: "tel:+541100000000",
-  emailLabel: "contacto@svmserviciosintegrales.com",
-  emailHref: "mailto:contacto@svmserviciosintegrales.com",
-  location: "Misiones, Argentina",
+  emailLabel: "contacto@blessedsolucionesintegrales.com",
+  emailHref: "mailto:contacto@blessedsolucionesintegrales.com",
+  location: "Barrio Industrial - Ruta Nacional N12, Wanda, Misiones",
 }
 
 export const navLinks = [
-  { label: "Servicios", href: "#servicios" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Trabajos", href: "#trabajos" },
   { label: "Clientes", href: "#clientes" },
   { label: "Contacto", href: "#contacto" },
 ]
@@ -83,5 +84,32 @@ export const areas = [
   {
     title: "Mantenimiento operativo",
     description: "Soluciones para sostener funcionamiento, imagen y seguridad en entornos que necesitan respuesta continua.",
+  },
+]
+
+export const workSamples = [
+  {
+    category: "Industria",
+    title: "Fabricación y montaje industrial",
+    description: "Estructuras y soluciones ejecutadas para entornos productivos.",
+    image: "/services/fabricacion_montaje_industrial.png",
+  },
+  {
+    category: "Mantenimiento",
+    title: "Intervenciones en entornos industriales",
+    description: "Tareas operativas resueltas con foco en continuidad y respuesta.",
+    image: "/services/intervencion_industrial.png",
+  },
+  {
+    category: "Infraestructura",
+    title: "Cubiertas y mantenimiento edilicio",
+    description: "Acciones de mejora y conservación en estructuras y espacios técnicos.",
+    image: "/services/mantenimiento_edilicio.png",
+  },
+  {
+    category: "Revestimientos",
+    title: "Terminaciones y espacios operativos",
+    description: "Terminaciones pensadas para uso intensivo y presentación profesional.",
+    image: "/services/terminaciones_revestimientos.png",
   },
 ]

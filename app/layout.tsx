@@ -10,32 +10,32 @@ const inter = Inter({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined
-const title = 'S.V.M. Servicios Integrales | Industria, Hotelería e Infraestructura'
+const title = 'Blessed Soluciones Integrales | Servicios para industria, hotelería e infraestructura'
 const description =
-  'Servicios integrales para industria, hotelería e infraestructura: montajes, instalaciones, mantenimiento, pintura, revestimientos y soporte técnico.'
+  'Blessed Soluciones Integrales brinda montajes, mantenimiento, instalaciones, pintura, revestimientos y soporte técnico para industria, hotelería e infraestructura en Misiones.'
 
 export const metadata: Metadata = {
   metadataBase,
   title,
   description,
-  applicationName: 'S.V.M. Servicios Integrales',
+  applicationName: 'Blessed Soluciones Integrales',
   icons: {
-    icon: '/logo-ofiicial.png',
-    shortcut: '/logo-ofiicial.png',
-    apple: '/logo-ofiicial.png',
+    icon: '/favicon-blessed.png',
+    shortcut: '/favicon-blessed.png',
+    apple: '/apple-touch-icon-blessed.png',
   },
   openGraph: {
     title,
     description,
-    siteName: 'S.V.M. Servicios Integrales',
+    siteName: 'Blessed Soluciones Integrales',
     locale: 'es_AR',
     type: 'website',
     images: [
       {
-        url: '/logo-ofiicial.png',
-        width: 1024,
-        height: 1536,
-        alt: 'Logo de S.V.M. Servicios Integrales',
+        url: '/logo-headerr.png',
+        width: 1536,
+        height: 1024,
+        alt: 'Logo de Blessed Soluciones Integrales',
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/logo-ofiicial.png'],
+    images: ['/logo-headerr.png'],
   },
 }
 
