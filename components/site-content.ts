@@ -54,7 +54,7 @@ export const differentials = [
   },
   {
     title: "Soluciones a medida",
-    description: "La propuesta se adapta al tipo de cliente, al lugar de trabajo y al nivel técnico que exige cada intervención.",
+    description: "El servicio se adapta al tipo de cliente, al lugar de trabajo y al nivel técnico que exige cada intervención.",
   },
 ]
 

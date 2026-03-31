@@ -35,7 +35,7 @@ export function Contact() {
                 Coordinemos una solución a medida para tu operación
               </h2>
               <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
-                El cierre comercial apunta a facilitar la consulta: presupuesto, WhatsApp y datos de contacto bien visibles, con una presentación sobria y confiable.
+                Canales de contacto directos para consultas, presupuestos y coordinación operativa, con información clara y acceso inmediato.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button

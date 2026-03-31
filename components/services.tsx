@@ -11,9 +11,9 @@ export function Services() {
       <div className="section-shell relative">
         <Reveal className="mx-auto max-w-3xl text-center" y={18}>
           <p className="section-kicker">Servicios</p>
-          <h2 className="section-title mt-3">Servicios organizados para comunicar mejor qué vende la empresa hoy</h2>
+          <h2 className="section-title mt-3">Servicios principales</h2>
           <p className="section-copy mt-4">
-            La propuesta agrupa la oferta en bloques claros para que la web sea más comercial, más fácil de leer y más útil en una primera consulta.
+            Soluciones integrales presentadas en bloques claros para facilitar la lectura y mostrar con precisión el alcance operativo de la empresa.
           </p>
         </Reveal>
 
