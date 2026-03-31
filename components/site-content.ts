@@ -1,7 +1,7 @@
 export const companyInfo = {
   name: "Blessed Soluciones Integrales",
   shortName: "Blessed",
-  whatsapp: "https://wa.me/5491100000000",
+  whatsapp: "https://wa.me/5493757524597",
   phoneLabel: "+54 9 3757 52-4597",
   phoneHref: "tel:+5493757524597",
   emailLabel: "info@blessedsi.com",
