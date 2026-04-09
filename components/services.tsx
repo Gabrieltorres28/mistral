@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Reveal } from "@/components/reveal"
 import { ServiceFlipCard } from "@/components/service-flip-card"
 import { serviceGroups } from "@/components/site-content"
@@ -5,9 +8,11 @@ import { serviceGroups } from "@/components/site-content"
 const iconKeys = ["drill", "wrench", "paintbrush", "settings"] as const
 
 export function Services() {
+  const [activeMobileCard, setActiveMobileCard] = useState<number | null>(null)
+
   return (
     <section id="servicios" className="relative py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 section-band opacity-90" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(247,249,246,0.42),rgba(245,248,244,0.18))]" />
       <div className="section-shell relative">
         <Reveal className="mx-auto max-w-3xl text-center" y={18}>
           <p className="section-kicker">Servicios</p>
@@ -27,6 +32,9 @@ export function Services() {
                 detailTitle={service.detailTitle}
                 detailItems={service.detailItems}
                 iconKey={iconKeys[index]}
+                isFlipped={activeMobileCard === index}
+                onFlip={() => setActiveMobileCard(index)}
+                onReset={() => setActiveMobileCard(null)}
               />
             </Reveal>
           ))}
