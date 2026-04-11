@@ -13,10 +13,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full overflow-visible border-b border-border/70 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-      <div className="section-shell overflow-visible py-0">
-        <div className="flex min-h-[76px] items-center justify-between gap-3 overflow-visible sm:min-h-[86px] lg:min-h-[98px] lg:gap-6">
-          <Link href="/" className="-my-3 shrink-0 overflow-visible sm:-my-4 lg:-my-10">
-            <BrandMark variant="header" className="h-[102px] w-[320px] sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]" />
+      <div className="section-shell overflow-visible py-0 max-sm:px-3">
+        <div className="flex min-h-[84px] items-center justify-between gap-2 overflow-visible sm:min-h-[92px] sm:gap-3 lg:min-h-[98px] lg:gap-6">
+          <Link href="/" className="-my-2 min-w-0 flex-1 overflow-visible sm:-my-4 lg:mr-4 lg:-my-10 lg:flex-none">
+            <BrandMark
+              variant="header"
+              className="h-[84px] w-[min(72vw,252px)] max-w-full sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]"
+            />
           </Link>
 
           <div className="hidden lg:flex shrink-0 items-center gap-4 rounded-[1.2rem] border border-border/80 bg-white/82 px-3 py-1.5 shadow-[0_10px_22px_rgba(23,34,28,0.05)] xl:px-3.5">
@@ -49,9 +52,9 @@ export function Header() {
                   variant="ghost"
                   size="icon"
                   aria-label="Abrir menú"
-                  className="h-11 w-11 rounded-full border border-border/90 bg-white/92 text-foreground shadow-[0_10px_24px_rgba(23,34,28,0.08)]"
+                  className="h-12 w-12 rounded-full border border-border/90 bg-white/92 text-foreground shadow-[0_10px_24px_rgba(23,34,28,0.08)]"
                 >
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent
@@ -60,7 +63,11 @@ export function Header() {
               >
                 <div className="flex h-full flex-col gap-6 pt-5">
                   <div className="min-w-0 rounded-[1.45rem] border border-border/80 bg-white/90 p-4 shadow-[0_16px_36px_rgba(23,34,28,0.06)]">
-                    <BrandMark variant="header" mobile className="h-[96px] w-[304px] sm:h-[102px] sm:w-[320px]" />
+                    <BrandMark
+                      variant="header"
+                      mobile
+                      className="h-[104px] w-[min(100%,320px)] sm:h-[110px] sm:w-[320px]"
+                    />
                     <div className="mt-4 rounded-[1.1rem] border border-primary/12 bg-primary/[0.04] px-4 py-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">Respuesta operativa</p>
                       <p className="mt-2 text-sm leading-6 text-muted-foreground">
