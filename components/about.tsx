@@ -1,18 +1,19 @@
 import { ClipboardCheck, Handshake, ScanSearch } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 import { differentials } from "@/components/site-content"
+import { cn } from "@/lib/utils"
 
 const icons = [Handshake, ClipboardCheck, ScanSearch]
 
 export function About() {
   return (
     <section id="nosotros" className="relative py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(18,146,74,0.08),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.3),rgba(244,247,241,0.52))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(31,31,31,0.04),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.28),rgba(241,242,238,0.58))]" />
       <div className="section-shell relative">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-10">
           <Reveal className="industrial-panel p-6 sm:p-8 lg:p-10" y={18}>
             <p className="section-kicker">Quiénes somos</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-graphite sm:text-4xl">
               Una empresa de Misiones orientada a resolver necesidades técnicas y operativas con criterio integral
             </h2>
             <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -23,16 +24,29 @@ export function About() {
           <div className="grid gap-4 lg:pt-6">
             {differentials.map((item, index) => {
               const Icon = icons[index]
+              const isDarkCard = index === 1
+
               return (
                 <Reveal key={item.title} delay={index * 80} y={22}>
-                  <article className="industrial-panel h-full p-5 sm:p-6">
+                  <article className={cn("h-full p-5 sm:p-6", isDarkCard ? "corporate-dark-panel" : "industrial-panel")}>
                     <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_12px_24px_rgba(18,146,74,0.18)]">
+                      <div
+                        className={cn(
+                          "flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl",
+                          isDarkCard && "border border-white/10 bg-white/12 text-white",
+                          !isDarkCard && index === 0 && "bg-secondary text-white shadow-[0_12px_24px_rgba(19,138,54,0.18)]",
+                          !isDarkCard && index === 2 && "bg-primary text-white shadow-[0_12px_24px_rgba(217,31,38,0.18)]",
+                        )}
+                      >
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold tracking-tight text-foreground">{item.title}</h3>
-                        <p className="mt-2 text-sm leading-7 text-muted-foreground sm:text-base">{item.description}</p>
+                        <h3 className={cn("text-lg font-semibold tracking-tight", isDarkCard ? "text-white" : "text-graphite")}>
+                          {item.title}
+                        </h3>
+                        <p className={cn("mt-2 text-sm leading-7 sm:text-base", isDarkCard ? "text-white/74" : "text-muted-foreground")}>
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   </article>

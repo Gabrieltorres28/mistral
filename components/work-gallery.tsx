@@ -5,7 +5,7 @@ import { workSamples } from "@/components/site-content"
 export function WorkGallery() {
   return (
     <section id="trabajos" className="relative py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(243,247,241,0.72),rgba(250,251,248,0.28)),radial-gradient(circle_at_bottom_left,rgba(18,146,74,0.08),transparent_24%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.3),rgba(241,242,238,0.7)),radial-gradient(circle_at_bottom_left,rgba(31,31,31,0.04),transparent_26%)]" />
       <div className="section-shell relative">
         <Reveal className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" y={18}>
           <div className="max-w-2xl">
@@ -21,7 +21,7 @@ export function WorkGallery() {
           {workSamples.map((work, index) => (
             <Reveal key={work.title} delay={index * 80} y={22}>
               <article className="industrial-panel group overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden bg-secondary/60">
+                <div className="relative aspect-[4/3] overflow-hidden bg-surface-soft">
                   <Image
                     src={work.image}
                     alt={work.title}
@@ -29,13 +29,13 @@ export function WorkGallery() {
                     sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,24,19,0.14),transparent_28%,rgba(244,248,242,0.02))]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(31,31,31,0.18),transparent_28%,rgba(255,255,255,0.02))]" />
                 </div>
 
-                <div className="px-5 py-5 sm:px-6 sm:py-6">
+                <div className="border-t border-border/80 px-5 py-5 sm:px-6 sm:py-6">
                   <div className="min-w-0">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary">{work.category}</p>
-                    <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground sm:text-[1.35rem]">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-secondary">{work.category}</p>
+                    <h3 className="mt-3 text-xl font-semibold tracking-tight text-graphite sm:text-[1.35rem]">
                       {work.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-[15px]">{work.description}</p>

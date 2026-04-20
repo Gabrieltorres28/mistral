@@ -12,7 +12,7 @@ export function Services() {
 
   return (
     <section id="servicios" className="relative py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(247,249,246,0.42),rgba(245,248,244,0.18))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.26),rgba(241,242,238,0.6)),radial-gradient(circle_at_top_center,rgba(31,31,31,0.04),transparent_46%)]" />
       <div className="section-shell relative">
         <Reveal className="mx-auto max-w-3xl text-center" y={18}>
           <p className="section-kicker">Servicios</p>

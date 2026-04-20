@@ -4,7 +4,7 @@ import { clients } from "@/components/site-content"
 
 function ClientChip({ name, logo }: { name: string; logo?: string }) {
   return (
-    <div className="flex h-24 w-[230px] shrink-0 items-center justify-center rounded-[1.35rem] border border-border bg-white/96 px-5 shadow-[0_10px_26px_rgba(23,34,28,0.05)] sm:h-28 sm:w-[280px] sm:px-6">
+    <div className="relative flex h-24 w-[230px] shrink-0 items-center justify-center overflow-hidden rounded-[1.35rem] border border-border bg-white/98 px-5 shadow-[0_14px_30px_rgba(31,31,31,0.05)] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[linear-gradient(90deg,rgba(19,138,54,0),rgba(19,138,54,0.48),rgba(217,31,38,0.44),rgba(217,31,38,0))] sm:h-28 sm:w-[280px] sm:px-6">
       {logo ? (
         <div className="relative h-14 w-full sm:h-16">
           <Image
@@ -16,7 +16,7 @@ function ClientChip({ name, logo }: { name: string; logo?: string }) {
           />
         </div>
       ) : (
-        <p className="text-center text-sm font-medium leading-6 text-foreground sm:text-[15px]">{name}</p>
+        <p className="text-center text-sm font-medium leading-6 text-graphite sm:text-[15px]">{name}</p>
       )}
     </div>
   )
@@ -31,7 +31,7 @@ export function Clients() {
         <div className="industrial-panel overflow-hidden px-0 py-6 sm:py-8 lg:py-10">
           <Reveal className="px-6 sm:px-8 lg:px-10" y={18}>
             <p className="section-kicker">Clientes destacados</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-graphite sm:text-4xl">
               Quiénes confían en nosotros para ejecutar, mantener y resolver
             </h2>
             <p className="section-copy mt-4 max-w-2xl">
@@ -51,7 +51,7 @@ export function Clients() {
               }}
             >
               {marqueeItems.map((client, index) => (
-                <ClientChip key={client.name + "-" + index} name={client.name} logo={client.logo} />
+                <ClientChip key={client.name + '-' + index} name={client.name} logo={client.logo} />
               ))}
             </div>
           </div>
