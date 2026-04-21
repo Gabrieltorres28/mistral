@@ -83,13 +83,13 @@ export const differentials = [
 ]
 
 export const clients = [
-  { name: "Arauco Argentina", logo: "/arauco.png" },
+  { name: "Arauco Argentina", logo: "/arauco.webp" },
   { name: "Hotel Internacional Iguazú", logo: "" },
-  { name: "Aeropuerto 2000", logo: "/aeropuerto.png" },
-  { name: "Duty Free Shop Puerto Iguazú", logo: "/dutyshop.png" },
-  { name: "Aqva Restaurante Iguazú", logo: "/restaurant.png" },
-  { name: "Municipalidad de Posadas", logo: "/muncipalidad.png" },
-  { name: "Dirección Provincial de Vialidad de Misiones", logo: "/direccionprovincial.png" },
+  { name: "Aeropuerto 2000", logo: "/aeropuerto.webp" },
+  { name: "Duty Free Shop Puerto Iguazú", logo: "/dutyshop.webp" },
+  { name: "Aqva Restaurante Iguazú", logo: "/restaurant.webp" },
+  { name: "Municipalidad de Posadas", logo: "/muncipalidad.webp" },
+  { name: "Dirección Provincial de Vialidad de Misiones", logo: "/direccionprovincial.webp" },
 ]
 
 export const areas = [
@@ -116,24 +116,24 @@ export const workSamples = [
     category: "Industria",
     title: "Fabricación y montaje industrial",
     description: "Estructuras y soluciones ejecutadas para entornos productivos.",
-    image: "/services/fabricacion_montaje_industrial.png",
+    image: "/services/fabricacion_montaje_industrial.webp",
   },
   {
     category: "Mantenimiento",
     title: "Intervenciones en entornos industriales",
     description: "Tareas operativas resueltas con foco en continuidad y respuesta.",
-    image: "/services/intervencion_industrial.png",
+    image: "/services/intervencion_industrial.webp",
   },
   {
     category: "Infraestructura",
     title: "Cubiertas y mantenimiento edilicio",
     description: "Acciones de mejora y conservación en estructuras y espacios técnicos.",
-    image: "/services/mantenimiento_edilicio.png",
+    image: "/services/mantenimiento_edilicio.webp",
   },
   {
     category: "Revestimientos",
     title: "Terminaciones y espacios operativos",
     description: "Terminaciones pensadas para uso intensivo y presentación profesional.",
-    image: "/services/terminaciones_revestimientos.png",
+    image: "/services/terminaciones_revestimientos.webp",
   },
 ]
