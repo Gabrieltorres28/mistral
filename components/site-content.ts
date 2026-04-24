@@ -4,8 +4,8 @@ export const companyInfo = {
   whatsapp: "https://wa.me/5493757524597",
   phoneLabel: "+54 9 3757 52-4597",
   phoneHref: "tel:+5493757524597",
-  emailLabel: "info@blessedsi.com",
-  emailHref: "mailto:info@blessedsi.com",
+  emailLabel: "contacto@blessed.com.ar",
+  emailHref: "mailto:contacto@blessed.com.ar",
   location: "Barrio Industrial - Ruta Nacional N12, Wanda, Misiones",
 }
 

@@ -104,7 +104,14 @@ export function Footer() {
                         </div>
                         <div className="min-w-0">
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/54">{item.label}</p>
-                          <p className="mt-1 break-words text-sm font-medium leading-6 text-white/86">{item.value}</p>
+                          <p
+                            className={cn(
+                              "mt-1 break-words text-sm font-medium leading-6 text-white/86",
+                              item.label === "Email" && "text-secondary",
+                            )}
+                          >
+                            {item.value}
+                          </p>
                         </div>
                       </Link>
                     )
