@@ -376,12 +376,10 @@ export function ServiceBlockPage({ block }: ServiceBlockPageProps) {
           </section>
           </Reveal>
 
-          <Reveal className="grid gap-5" y={18}>
           <section className="grid gap-5">
             <SectionHeader id="areas" eyebrow="Subservicios y áreas" title="Áreas de trabajo" />
             <ServiceAreaCards services={block.services} />
           </section>
-          </Reveal>
 
           <Reveal className="grid gap-5" y={18}>
           <section className="grid gap-5">
