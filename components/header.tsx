@@ -31,6 +31,7 @@ const serviceMenuLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 w-full overflow-visible border-b border-border/80 bg-background/95 shadow-[0_1px_0_rgba(31,31,31,0.03)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
@@ -48,16 +49,32 @@ export function Header() {
               {navLinks.map((link) => {
                 if (link.href === "/servicios") {
                   return (
-                    <div key={link.href} className="group relative">
+                    <div
+                      key={link.href}
+                      className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                      onBlur={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget)) {
+                          setIsServicesOpen(false)
+                        }
+                      }}
+                    >
                       <Link
                         href={link.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        onFocus={() => setIsServicesOpen(true)}
                         className="inline-flex whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary focus-visible:bg-surface-soft focus-visible:text-secondary xl:px-3"
                       >
                         {link.label}
-                        <ChevronDown className="ml-1 h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                        <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
                       </Link>
 
-                      <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[360px] -translate-x-1/2 pt-3 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                      <div
+                        className={`absolute left-1/2 top-full z-50 w-[360px] -translate-x-1/2 pt-3 transition duration-150 ${
+                          isServicesOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+                        }`}
+                      >
                         <div className="rounded-[1.2rem] border border-border bg-white/98 p-2 shadow-[0_22px_60px_rgba(31,31,31,0.14)] ring-1 ring-black/[0.03] backdrop-blur-md">
                           <p className="px-3 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                             Servicios principales
@@ -70,6 +87,7 @@ export function Header() {
                                 <Link
                                   key={item.href}
                                   href={item.href}
+                                  onClick={() => setIsServicesOpen(false)}
                                   className="group/item grid grid-cols-[40px_1fr] gap-3 rounded-[0.95rem] px-3 py-3 transition hover:bg-surface-soft focus-visible:bg-surface-soft"
                                 >
                                   <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition group-hover/item:bg-primary group-hover/item:text-white">
