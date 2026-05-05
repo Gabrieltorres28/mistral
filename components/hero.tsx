@@ -1,32 +1,42 @@
 import Link from "next/link"
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react"
+import { ArrowRight, MessageCircle } from "lucide-react"
+import { ImageWithFallback } from "@/components/image-with-fallback"
 import { Reveal } from "@/components/reveal"
 import { Button } from "@/components/ui/button"
-import { companyInfo, heroHighlights } from "@/components/site-content"
-import { cn } from "@/lib/utils"
-
-const operatingScopes = ["Industria", "Hotelería", "Infraestructura", "Mantenimiento"]
+import { serviceBlocks } from "@/data/services"
+import { companyInfo } from "@/components/site-content"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(19,138,54,0.09),transparent_26%),radial-gradient(circle_at_top_right,rgba(217,31,38,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.16),transparent)]" />
+    <section className="relative overflow-hidden bg-[#202322] py-16 text-white sm:py-20 lg:py-24">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,17,16,0.94),rgba(15,17,16,0.76)_45%,rgba(15,17,16,0.36))]" />
+      <ImageWithFallback
+        src="/images/fondo-hero-desktop.webp"
+        alt="Operacion industrial de Blessed Soluciones Integrales"
+        fill
+        priority
+        sizes="100vw"
+        fallbackLabel="Blessed Soluciones Integrales"
+        fallbackDetail="Hero industrial pendiente"
+        wrapperClassName="absolute inset-0"
+        className="opacity-55"
+      />
       <div className="section-shell relative">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
-          <Reveal className="max-w-2xl" y={18}>
-            <p className="section-kicker">{companyInfo.name}</p>
-            <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-graphite sm:text-5xl lg:text-6xl">
-              Soluciones integrales para industria, hotelería e infraestructura.
+        <div className="max-w-4xl">
+          <Reveal y={18}>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-secondary-soft">{companyInfo.name}</p>
+            <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Servicios tecnicos para operaciones industriales, edilicias y gastronomicas.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-              Montajes, instalaciones, mantenimiento, pintura, revestimientos y soporte técnico general con foco en cumplimiento, respuesta y atención personalizada.
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
+              Mantenimiento, montajes, limpieza industrial y soporte operativo con estructura preparada para trabajos en campo.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button
                 asChild
                 size="lg"
-                className="h-12 rounded-full px-6 text-sm font-semibold text-primary-foreground shadow-[0_16px_36px_rgba(217,31,38,0.22)] hover:bg-primary/92 hover:shadow-[0_18px_40px_rgba(217,31,38,0.26)]"
+                className="h-12 rounded-md px-6 text-sm font-semibold text-primary-foreground shadow-[0_16px_36px_rgba(217,31,38,0.22)] hover:bg-primary/92"
               >
                 <Link href={companyInfo.whatsapp} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-5 w-5" />
@@ -37,77 +47,27 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="h-12 rounded-full border-graphite/15 bg-white px-6 text-sm font-semibold text-graphite hover:border-secondary/30 hover:bg-surface-soft hover:text-graphite"
+                className="h-12 rounded-md border-white/20 bg-white/10 px-6 text-sm font-semibold text-white hover:bg-white hover:text-graphite"
               >
-                <Link href="#servicios">
+                <Link href="/servicios">
                   Ver servicios
-                  <ArrowRight className="h-4 w-4 text-secondary" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>
 
-            <ul className="mt-8 grid gap-3 text-sm text-graphite sm:grid-cols-2">
-              {heroHighlights.map((item, index) => (
-                <Reveal key={item} delay={120 + index * 70} y={14}>
-                  <li className="flex items-start gap-3 rounded-[1.25rem] border border-border bg-white px-4 py-3 shadow-[0_10px_24px_rgba(31,31,31,0.04)]">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-secondary" />
-                    <span>{item}</span>
-                  </li>
-                </Reveal>
+            <div className="mt-10 grid gap-3 md:grid-cols-3">
+              {serviceBlocks.map((block) => (
+                <Link
+                  key={block.slug}
+                  href={`/servicios/${block.slug}`}
+                  scroll
+                  className="group rounded-lg border border-white/14 bg-white/10 p-4 text-left backdrop-blur-sm transition-colors hover:bg-white/16"
+                >
+                  <p className="text-sm font-semibold text-white">{block.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/66">{block.summary}</p>
+                </Link>
               ))}
-            </ul>
-          </Reveal>
-
-          <Reveal className="industrial-panel overflow-hidden p-4 sm:p-5" delay={140} y={26}>
-            <div className="industrial-grid rounded-[1.5rem] border border-border bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,242,238,0.96))] p-5 sm:p-6">
-              <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-secondary">Capacidad operativa</p>
-                  <p className="mt-2 text-lg font-semibold text-graphite">
-                    Respuesta integral para entornos que requieren ejecución, mantenimiento y soporte técnico.
-                  </p>
-                </div>
-                <div className="status-pill">
-                  <span className="h-2 w-2 rounded-full bg-secondary" />
-                  Activo
-                </div>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {operatingScopes.map((item, index) => (
-                  <Reveal key={item} delay={220 + index * 60} y={12}>
-                    <span
-                      className={cn(
-                        "inline-flex rounded-full border px-3 py-2 text-sm font-medium shadow-[0_6px_16px_rgba(31,31,31,0.04)]",
-                        index === 0 && "border-secondary/20 bg-secondary-soft text-secondary",
-                        index === 2 && "border-primary/15 bg-primary-soft text-primary",
-                        index !== 0 && index !== 2 && "border-border bg-white text-graphite",
-                      )}
-                    >
-                      {item}
-                    </span>
-                  </Reveal>
-                ))}
-              </div>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <Reveal delay={360} y={16}>
-                  <div className="corporate-dark-panel h-full p-4 sm:p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary/80">Enfoque</p>
-                    <p className="mt-2 text-sm leading-6 text-white/78">
-                      Soluciones a medida para cada cliente, con criterio práctico y buena coordinación de obra o servicio.
-                    </p>
-                  </div>
-                </Reveal>
-                <Reveal delay={430} y={16}>
-                  <div className="rounded-[1.3rem] border border-border bg-white/96 p-4 shadow-[0_12px_28px_rgba(31,31,31,0.05)] sm:p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Cobertura</p>
-                    <p className="mt-2 text-sm leading-6 text-graphite">
-                      Servicios orientados a empresas, hoteles, organismos y operaciones que necesitan respuesta confiable.
-                    </p>
-                  </div>
-                </Reveal>
-              </div>
             </div>
           </Reveal>
         </div>

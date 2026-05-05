@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { ScrollToTop } from '@/components/scroll-to-top'
+import { WhatsAppButton } from '@/components/whatsapp-button'
 import './globals.css'
 
 const manrope = Manrope({
@@ -80,7 +84,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${manrope.variable} font-sans antialiased`}>
+        <Header />
+        <ScrollToTop />
         {children}
+        <Footer />
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>

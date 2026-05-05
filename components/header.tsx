@@ -13,22 +13,22 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full overflow-visible border-b border-border/80 bg-background/95 shadow-[0_1px_0_rgba(31,31,31,0.03)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-      <div className="section-shell overflow-visible py-0 max-sm:px-3">
-        <div className="flex min-h-[84px] items-center justify-between gap-2 overflow-visible sm:min-h-[92px] sm:gap-3 lg:min-h-[98px] lg:gap-6">
-          <Link href="/" className="-my-2 min-w-0 flex-1 overflow-visible sm:-my-4 lg:mr-4 lg:-my-10 lg:flex-none">
+      <div className="mx-auto w-full overflow-visible px-3 py-0 sm:px-5 lg:px-8 2xl:px-10">
+        <div className="flex min-h-[88px] items-center justify-between gap-2 overflow-visible sm:min-h-[104px] sm:gap-3 lg:min-h-[108px] lg:gap-5 xl:min-h-[118px] xl:gap-6">
+          <Link href="/" className="-my-2 min-w-0 flex-1 overflow-visible sm:-my-4 lg:mr-4 lg:flex-none xl:mr-6">
             <BrandMark
               variant="header"
-              className="h-[84px] w-[min(72vw,252px)] max-w-full sm:h-[112px] sm:w-[352px] lg:h-[176px] lg:w-[560px]"
+              className="h-[110px] w-[min(78vw,330px)] max-w-full sm:h-[132px] sm:w-[420px] lg:h-[118px] lg:w-[370px] xl:h-[136px] xl:w-[440px] 2xl:h-[150px] 2xl:w-[500px]"
             />
           </Link>
 
-          <div className="hidden shrink-0 items-center gap-4 rounded-[1.2rem] border border-border bg-white/95 px-3 py-1.5 shadow-[0_14px_30px_rgba(31,31,31,0.06)] lg:flex xl:px-3.5">
+          <div className="hidden min-w-0 shrink items-center gap-2 rounded-[1.2rem] border border-border bg-white/95 px-2.5 py-1.5 shadow-[0_14px_30px_rgba(31,31,31,0.06)] lg:flex xl:gap-4 xl:px-3.5">
             <nav className="flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-3 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary"
+                  className="whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary xl:px-3"
                 >
                   {link.label}
                 </Link>
@@ -37,8 +37,8 @@ export function Header() {
 
             <div className="h-6 w-px bg-border" />
 
-            <Button asChild className="h-9 rounded-full px-4 text-sm font-semibold shadow-[0_14px_30px_rgba(217,31,38,0.18)] hover:shadow-[0_16px_32px_rgba(217,31,38,0.22)]">
-              <Link href="#contacto">
+            <Button asChild className="hidden h-9 shrink-0 rounded-full px-3 text-sm font-semibold shadow-[0_14px_30px_rgba(217,31,38,0.18)] hover:shadow-[0_16px_32px_rgba(217,31,38,0.22)] xl:inline-flex xl:px-4">
+              <Link href="/contacto">
                 Solicitar presupuesto
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -113,7 +113,7 @@ export function Header() {
 
                   <div className="mt-auto grid gap-3 pb-6">
                     <Button asChild className="h-12 w-full rounded-full text-sm font-semibold shadow-[0_14px_30px_rgba(217,31,38,0.18)] hover:shadow-[0_16px_32px_rgba(217,31,38,0.22)]">
-                      <Link href="#contacto" onClick={() => setIsOpen(false)}>
+                      <Link href="/contacto" onClick={() => setIsOpen(false)}>
                         Solicitar presupuesto
                         <ArrowRight className="h-4 w-4" />
                       </Link>

@@ -1,29 +1,27 @@
 import { PageLoader } from "@/components/page-loader"
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
-import { Services } from "@/components/services"
-import { WorkGallery } from "@/components/work-gallery"
 import { Clients } from "@/components/clients"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import {
+  CapabilityGrid,
+  FinalCTA,
+  HeroIndustrial,
+  ProcessSection,
+  ServicePillars,
+  TrustBar,
+} from "@/components/home-industrial"
 
 export default function Home() {
   return (
     <>
       <PageLoader />
-      <Header />
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <WorkGallery />
+        <HeroIndustrial />
+        <TrustBar />
+        <ServicePillars />
+        <CapabilityGrid />
+        <ProcessSection />
         <Clients />
-        <Contact />
+        <FinalCTA />
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }

@@ -27,7 +27,7 @@ const contactItems = [
   {
     label: "Ubicación",
     value: companyInfo.location,
-    href: "#contacto",
+    href: "/contacto",
     icon: MapPin,
   },
 ]
@@ -48,7 +48,7 @@ export function Footer() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link
-                    href="#contacto"
+                    href="/contacto"
                     className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[0_16px_34px_rgba(217,31,38,0.24)] transition-transform duration-200 hover:-translate-y-0.5"
                   >
                     Solicitar presupuesto

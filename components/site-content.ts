@@ -10,11 +10,11 @@ export const companyInfo = {
 }
 
 export const navLinks = [
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Trabajos", href: "#trabajos" },
-  { label: "Clientes", href: "#clientes" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Capacidad operativa", href: "/capacidad-operativa" },
+  { label: "Empresa", href: "/empresa" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 export const heroHighlights = [

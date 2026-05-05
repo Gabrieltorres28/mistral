@@ -1,41 +1,47 @@
-"use client"
-
-import { useState } from "react"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { ImageWithFallback } from "@/components/image-with-fallback"
 import { Reveal } from "@/components/reveal"
-import { ServiceFlipCard } from "@/components/service-flip-card"
-import { serviceGroups } from "@/components/site-content"
-
-const iconKeys = ["drill", "wrench", "paintbrush", "settings"] as const
+import { serviceBlocks } from "@/data/services"
 
 export function Services() {
-  const [activeMobileCard, setActiveMobileCard] = useState<number | null>(null)
-
   return (
     <section id="servicios" className="relative py-16 sm:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.26),rgba(241,242,238,0.6)),radial-gradient(circle_at_top_center,rgba(31,31,31,0.04),transparent_46%)]" />
       <div className="section-shell relative">
-        <Reveal className="mx-auto max-w-3xl text-center" y={18}>
+        <Reveal className="max-w-3xl" y={18}>
           <p className="section-kicker">Servicios</p>
-          <h2 className="section-title mt-3">Servicios principales</h2>
+          <h2 className="section-title mt-3">Bloques principales de trabajo</h2>
           <p className="section-copy mt-4">
-            Soluciones integrales presentadas en bloques claros para facilitar la lectura y mostrar con precisión el alcance operativo de la empresa.
+            La estructura de servicios se organiza en tres bloques operativos. Cada bloque tiene una pagina interna con alcance, tareas, aplicaciones y proceso de trabajo.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-14 lg:gap-6">
-          {serviceGroups.map((service, index) => (
-            <Reveal key={service.title} delay={index * 80} y={22}>
-              <ServiceFlipCard
-                index={index}
-                title={service.title}
-                description={service.description}
-                detailTitle={service.detailTitle}
-                detailItems={service.detailItems}
-                iconKey={iconKeys[index]}
-                isFlipped={activeMobileCard === index}
-                onFlip={() => setActiveMobileCard(index)}
-                onReset={() => setActiveMobileCard(null)}
-              />
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {serviceBlocks.map((block, index) => (
+            <Reveal key={block.slug} delay={index * 80} y={22}>
+              <article className="h-full overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_46px_rgba(31,31,31,0.07)]">
+                <ImageWithFallback
+                  src={block.image}
+                  alt={block.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  fallbackLabel={block.title}
+                  fallbackDetail="Imagen pendiente"
+                  wrapperClassName="aspect-[4/3]"
+                />
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold text-graphite">{block.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{block.summary}</p>
+                  <Link
+                    href={`/servicios/${block.slug}`}
+                    scroll
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                  >
+                    Ver detalle tecnico
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
