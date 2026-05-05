@@ -2,11 +2,32 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Mail, Menu, Phone } from "lucide-react"
+import { ArrowRight, ChevronDown, Factory, Mail, Menu, Phone, Utensils, Wrench } from "lucide-react"
 import { BrandMark } from "@/components/brand-mark"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { companyInfo, navLinks } from "@/components/site-content"
+
+const serviceMenuLinks = [
+  {
+    label: "Mantenimiento y Montajes",
+    href: "/servicios/mantenimiento-y-montajes",
+    description: "Edilicio, eléctrico, climatización y metalmecánica.",
+    icon: Wrench,
+  },
+  {
+    label: "Limpieza Industrial",
+    href: "/servicios/limpieza-industrial",
+    description: "Oficinas, áreas técnicas y entornos industriales.",
+    icon: Factory,
+  },
+  {
+    label: "Mantenimiento Gastronómico",
+    href: "/servicios/mantenimiento-gastronomico",
+    description: "Soporte técnico para cocinas y locales gastronómicos.",
+    icon: Utensils,
+  },
+]
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,15 +45,60 @@ export function Header() {
 
           <div className="hidden min-w-0 shrink items-center gap-2 rounded-[1.2rem] border border-border bg-white/95 px-2.5 py-1.5 shadow-[0_14px_30px_rgba(31,31,31,0.06)] lg:flex xl:gap-4 xl:px-3.5">
             <nav className="flex items-center gap-0.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary xl:px-3"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                if (link.href === "/servicios") {
+                  return (
+                    <div key={link.href} className="group relative">
+                      <Link
+                        href={link.href}
+                        className="inline-flex whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary focus-visible:bg-surface-soft focus-visible:text-secondary xl:px-3"
+                      >
+                        {link.label}
+                        <ChevronDown className="ml-1 h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                      </Link>
+
+                      <div className="pointer-events-none absolute left-1/2 top-full z-50 w-[360px] -translate-x-1/2 pt-3 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                        <div className="rounded-[1.2rem] border border-border bg-white/98 p-2 shadow-[0_22px_60px_rgba(31,31,31,0.14)] ring-1 ring-black/[0.03] backdrop-blur-md">
+                          <p className="px-3 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                            Servicios principales
+                          </p>
+                          <div className="grid gap-1">
+                            {serviceMenuLinks.map((item) => {
+                              const Icon = item.icon
+
+                              return (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  className="group/item grid grid-cols-[40px_1fr] gap-3 rounded-[0.95rem] px-3 py-3 transition hover:bg-surface-soft focus-visible:bg-surface-soft"
+                                >
+                                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition group-hover/item:bg-primary group-hover/item:text-white">
+                                    <Icon className="h-5 w-5" />
+                                  </span>
+                                  <span>
+                                    <span className="block text-sm font-semibold text-graphite">{item.label}</span>
+                                    <span className="mt-1 block text-xs leading-5 text-muted-foreground">{item.description}</span>
+                                  </span>
+                                </Link>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                }
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-foreground/86 transition-colors hover:bg-surface-soft hover:text-secondary xl:px-3"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
             </nav>
 
             <div className="h-6 w-px bg-border" />
@@ -77,16 +143,55 @@ export function Header() {
                   </div>
 
                   <nav className="grid gap-2.5">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className="rounded-[1.1rem] border border-border bg-white px-4 py-3.5 text-base font-medium text-graphite transition-colors hover:border-secondary/20 hover:bg-surface-soft hover:text-secondary"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                      if (link.href === "/servicios") {
+                        return (
+                          <div key={link.href} className="rounded-[1.1rem] border border-border bg-white p-2">
+                            <Link
+                              href={link.href}
+                              onClick={() => setIsOpen(false)}
+                              className="flex items-center justify-between rounded-[0.9rem] px-3 py-3 text-base font-semibold text-graphite transition-colors hover:bg-surface-soft hover:text-secondary"
+                            >
+                              {link.label}
+                              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                            </Link>
+                            <div className="mt-1 grid gap-1">
+                              {serviceMenuLinks.map((item) => {
+                                const Icon = item.icon
+
+                                return (
+                                  <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="grid grid-cols-[34px_1fr] gap-3 rounded-[0.9rem] px-3 py-2.5 text-sm transition-colors hover:bg-surface-soft"
+                                  >
+                                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary/10 text-primary">
+                                      <Icon className="h-4 w-4" />
+                                    </span>
+                                    <span>
+                                      <span className="block font-semibold text-graphite">{item.label}</span>
+                                      <span className="mt-0.5 block text-xs leading-5 text-muted-foreground">{item.description}</span>
+                                    </span>
+                                  </Link>
+                                )
+                              })}
+                            </div>
+                          </div>
+                        )
+                      }
+
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setIsOpen(false)}
+                          className="rounded-[1.1rem] border border-border bg-white px-4 py-3.5 text-base font-medium text-graphite transition-colors hover:border-secondary/20 hover:bg-surface-soft hover:text-secondary"
+                        >
+                          {link.label}
+                        </Link>
+                      )
+                    })}
                   </nav>
 
                   <div className="rounded-[1.35rem] border border-border bg-white/94 p-4">
