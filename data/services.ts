@@ -39,7 +39,7 @@ export const serviceBlocks = [
     slug: "mantenimiento-y-montajes",
     title: "Mantenimiento y Montajes",
     summary:
-      "Intervenciones preventivas y correctivas sobre infraestructura edilicia, instalaciones electricas, climatizacion y soluciones metalmecanicas para sostener espacios operativos.",
+      "Intervenciones preventivas y correctivas sobre infraestructura edilicia, instalaciones eléctricas, climatización y soluciones metalmecánicas para sostener espacios operativos.",
     image: "/images/servicios/mantenimiento-montaje1.webp",
     imageAlt: "Equipo de Blessed realizando trabajos de mantenimiento, montaje industrial, electricidad y metalmecánica en planta",
     heroImage: "/images/servicios/mantenimiento-montaje1.webp",
@@ -56,29 +56,29 @@ export const serviceBlocks = [
         slug: "mantenimiento-edilicio",
         title: "Mantenimiento edilicio",
         summary:
-          "Mantenimiento preventivo y correctivo para edificios, areas operativas e instalaciones de uso intensivo.",
+          "Mantenimiento preventivo y correctivo para edificios, áreas operativas e instalaciones de uso intensivo.",
         description:
           "Intervenciones orientadas a conservar infraestructura, resolver fallas, ejecutar reparaciones y sostener condiciones seguras de funcionamiento en espacios corporativos, industriales, institucionales y comerciales.",
         image: "/images/servicios/mantenimiento-edilicio.webp",
         areas: [
           {
             title: "Mantenimiento preventivo",
-            summary: "Rutinas de inspeccion, control y correccion temprana para reducir paradas y deterioro.",
+            summary: "Rutinas de inspección, control y corrección temprana para reducir paradas y deterioro.",
           },
           {
             title: "Mantenimiento correctivo",
-            summary: "Respuesta tecnica ante fallas, roturas, filtraciones, desgaste o deterioros de uso.",
+            summary: "Respuesta técnica ante fallas, roturas, filtraciones, desgaste o deterioros de uso.",
           },
           {
             title: "Adecuaciones edilicias",
-            summary: "Mejoras, reparaciones y adaptaciones de espacios segun necesidad operativa.",
+            summary: "Mejoras, reparaciones y adaptaciones de espacios según necesidad operativa.",
           },
         ],
         subservices: [
           "Reparaciones generales",
           "Mantenimiento de cubiertas y cerramientos",
           "Terminaciones y mejoras de espacios",
-          "Intervenciones en areas operativas",
+          "Intervenciones en áreas operativas",
         ],
         tasks: [
           "Relevar el estado de instalaciones y superficies.",
@@ -98,79 +98,79 @@ export const serviceBlocks = [
       },
       {
         slug: "montaje-y-mantenimiento-electrico",
-        title: "Montaje y mantenimiento electrico",
+        title: "Montaje y mantenimiento eléctrico",
         summary:
-          "Montajes, adecuaciones y mantenimiento de instalaciones electricas para entornos operativos y productivos.",
+          "Montajes, adecuaciones y mantenimiento de instalaciones eléctricas para entornos operativos y productivos.",
         description:
-          "Servicio orientado a instalaciones electricas nuevas, ampliaciones, mantenimiento preventivo, correccion de fallas y adecuaciones tecnicas en obras, plantas, edificios y espacios de servicio.",
+          "Servicio orientado a instalaciones eléctricas nuevas, ampliaciones, mantenimiento preventivo, corrección de fallas y adecuaciones técnicas en obras, plantas, edificios y espacios de servicio.",
         image: "/images/servicios/mantenimiento-electrico.webp",
         areas: [
           {
-            title: "Montajes electricos",
-            summary: "Ejecucion de instalaciones, canalizaciones, tableros y tendidos segun alcance requerido.",
+            title: "Montajes eléctricos",
+            summary: "Ejecución de instalaciones, canalizaciones, tableros y tendidos según alcance requerido.",
           },
           {
-            title: "Mantenimiento electrico",
-            summary: "Control, diagnostico y correccion de fallas para continuidad operativa.",
+            title: "Mantenimiento eléctrico",
+            summary: "Control, diagnóstico y corrección de fallas para continuidad operativa.",
           },
           {
-            title: "Adecuaciones tecnicas",
+            title: "Adecuaciones técnicas",
             summary: "Mejoras y adaptaciones de instalaciones existentes para nuevos usos o requerimientos.",
           },
         ],
         subservices: [
-          "Instalaciones electricas",
+          "Instalaciones eléctricas",
           "Canalizaciones y tendidos",
           "Mantenimiento de tableros",
-          "Diagnostico y correccion de fallas",
+          "Diagnóstico y corrección de fallas",
         ],
         tasks: [
-          "Relevar requerimientos electricos del espacio.",
-          "Ejecutar montajes y adecuaciones tecnicas.",
+          "Relevar requerimientos eléctricos del espacio.",
+          "Ejecutar montajes y adecuaciones técnicas.",
           "Controlar estado de instalaciones existentes.",
           "Resolver fallas y necesidades de mantenimiento.",
         ],
         applications: [
           "Plantas industriales",
           "Hoteles",
-          "Locales gastronomicos",
+          "Locales gastronómicos",
           "Oficinas",
           "Edificios institucionales",
           "Obras y ampliaciones",
         ],
-        ctaLabel: "Consultar por montaje electrico",
+        ctaLabel: "Consultar por montaje eléctrico",
       },
       {
         slug: "aire-acondicionado",
         title: "Aire acondicionado",
         summary:
-          "Instalacion, mantenimiento y asistencia tecnica para sistemas de climatizacion en espacios corporativos, comerciales e industriales.",
+          "Instalación, mantenimiento y asistencia técnica para sistemas de climatización en espacios corporativos, comerciales e industriales.",
         description:
-          "Servicio para sostener el rendimiento de equipos de climatizacion, mejorar condiciones de confort y resolver necesidades de instalacion, limpieza, mantenimiento o reparacion segun el tipo de espacio.",
+          "Servicio para sostener el rendimiento de equipos de climatización, mejorar condiciones de confort y resolver necesidades de instalación, limpieza, mantenimiento o reparación según el tipo de espacio.",
         image: "/images/servicios/mantenimiento-aire.webp",
         areas: [
           {
-            title: "Instalacion",
-            summary: "Montaje de equipos y puesta en servicio segun condiciones del lugar.",
+            title: "Instalación",
+            summary: "Montaje de equipos y puesta en servicio según condiciones del lugar.",
           },
           {
             title: "Mantenimiento",
             summary: "Limpieza, control y tareas preventivas para conservar rendimiento.",
           },
           {
-            title: "Servicio tecnico",
-            summary: "Diagnostico y correccion de fallas en equipos y sistemas instalados.",
+            title: "Servicio técnico",
+            summary: "Diagnóstico y corrección de fallas en equipos y sistemas instalados.",
           },
         ],
         subservices: [
-          "Instalacion de equipos",
+          "Instalación de equipos",
           "Limpieza y mantenimiento preventivo",
-          "Revision de funcionamiento",
-          "Diagnostico de fallas",
+          "Revisión de funcionamiento",
+          "Diagnóstico de fallas",
         ],
         tasks: [
           "Evaluar condiciones del ambiente y requerimientos de uso.",
-          "Instalar o adecuar equipos de climatizacion.",
+          "Instalar o adecuar equipos de climatización.",
           "Limpiar componentes y verificar funcionamiento.",
           "Resolver fallas detectadas en servicio.",
         ],
@@ -178,55 +178,55 @@ export const serviceBlocks = [
           "Oficinas",
           "Hoteles",
           "Locales comerciales",
-          "Areas administrativas",
-          "Espacios gastronomicos",
+          "Áreas administrativas",
+          "Espacios gastronómicos",
           "Ambientes de trabajo",
         ],
-        ctaLabel: "Solicitar servicio de climatizacion",
+        ctaLabel: "Solicitar servicio de climatización",
       },
       {
         slug: "metalmecanica",
-        title: "Metalmecanica",
+        title: "Metalmecánica",
         summary:
-          "Fabricacion, montaje y mantenimiento de soluciones metalicas para infraestructura, industria y espacios operativos.",
+          "Fabricación, montaje y mantenimiento de soluciones metálicas para infraestructura, industria y espacios operativos.",
         description:
-          "Servicio enfocado en estructuras, soportes, reparaciones, piezas y montajes metalicos que requieren ejecucion practica, criterio tecnico y adaptacion a las condiciones reales del lugar.",
+          "Servicio enfocado en estructuras, soportes, reparaciones, piezas y montajes metálicos que requieren ejecución práctica, criterio técnico y adaptación a las condiciones reales del lugar.",
         image: "/images/servicios/mantenimiento-mecanico.webp",
         areas: [
           {
-            title: "Fabricacion",
-            summary: "Construccion de piezas, estructuras y soluciones metalicas segun necesidad.",
+            title: "Fabricación",
+            summary: "Construcción de piezas, estructuras y soluciones metálicas según necesidad.",
           },
           {
             title: "Montaje",
-            summary: "Instalacion en sitio de estructuras, soportes y componentes metalicos.",
+            summary: "Instalación en sitio de estructuras, soportes y componentes metálicos.",
           },
           {
-            title: "Mantenimiento metalico",
-            summary: "Reparacion, refuerzo y adecuacion de elementos existentes.",
+            title: "Mantenimiento metálico",
+            summary: "Reparación, refuerzo y adecuación de elementos existentes.",
           },
         ],
         subservices: [
-          "Estructuras metalicas",
-          "Soportes y herreria tecnica",
-          "Reparaciones metalicas",
+          "Estructuras metálicas",
+          "Soportes y herrería técnica",
+          "Reparaciones metálicas",
           "Montajes en sitio",
         ],
         tasks: [
           "Relevar medidas, uso y condiciones de montaje.",
           "Fabricar componentes o estructuras requeridas.",
           "Montar y ajustar soluciones en obra o planta.",
-          "Reparar, reforzar o adecuar elementos metalicos existentes.",
+          "Reparar, reforzar o adecuar elementos metálicos existentes.",
         ],
         applications: [
           "Industria",
           "Infraestructura",
-          "Depositos",
-          "Areas de servicio",
+          "Depósitos",
+          "Áreas de servicio",
           "Edificios operativos",
           "Obras de mejora",
         ],
-        ctaLabel: "Consultar por metalmecanica",
+        ctaLabel: "Consultar por metalmecánica",
       },
     ],
   },
@@ -234,7 +234,7 @@ export const serviceBlocks = [
     slug: "limpieza-industrial",
     title: "Limpieza Industrial",
     summary:
-      "Limpieza profesional para oficinas, areas tecnicas y entornos industriales que requieren higiene operativa, orden de trabajo y continuidad de uso.",
+      "Limpieza profesional para oficinas, áreas técnicas y entornos industriales que requieren higiene operativa, orden de trabajo y continuidad de uso.",
     image: "/images/servicios/limpieza-tecnica-industrial.webp",
     imageAlt: "Equipo de Blessed realizando limpieza técnica industrial en una planta productiva",
     heroImage: "/images/servicios/limpieza-tecnica-industrial.webp",
@@ -250,16 +250,16 @@ export const serviceBlocks = [
         summary:
           "Servicio de limpieza para espacios administrativos, comerciales y corporativos con rutinas adaptadas al uso diario.",
         description:
-          "Limpieza planificada para mantener oficinas, areas comunes, salas de reunion y espacios de atencion en condiciones prolijas, higienicas y funcionales.",
+          "Limpieza planificada para mantener oficinas, áreas comunes, salas de reunión y espacios de atención en condiciones prolijas, higiénicas y funcionales.",
         image: "/images/servicios/limpieza-oficina.webp",
         areas: [
           {
             title: "Rutinas programadas",
-            summary: "Frecuencias de limpieza organizadas segun circulacion, horarios y necesidades del cliente.",
+            summary: "Frecuencias de limpieza organizadas según circulación, horarios y necesidades del cliente.",
           },
           {
-            title: "Areas comunes",
-            summary: "Atencion de espacios compartidos, accesos, sanitarios y zonas de trabajo.",
+            title: "Áreas comunes",
+            summary: "Atención de espacios compartidos, accesos, sanitarios y zonas de trabajo.",
           },
           {
             title: "Soporte operativo",
@@ -267,15 +267,15 @@ export const serviceBlocks = [
           },
         ],
         subservices: [
-          "Limpieza diaria o periodica",
-          "Sanitarios y areas comunes",
+          "Limpieza diaria o periódica",
+          "Sanitarios y áreas comunes",
           "Puestos de trabajo",
           "Vidrios, accesos y circulaciones",
         ],
         tasks: [
           "Organizar rutinas por sector y frecuencia.",
-          "Limpiar superficies, mobiliario y areas de uso comun.",
-          "Mantener sanitarios y espacios de circulacion.",
+          "Limpiar superficies, mobiliario y áreas de uso común.",
+          "Mantener sanitarios y espacios de circulación.",
           "Realizar controles de orden e higiene.",
         ],
         applications: [
@@ -284,26 +284,26 @@ export const serviceBlocks = [
           "Instituciones",
           "Locales comerciales",
           "Recepciones",
-          "Salas de reunion",
+          "Salas de reunión",
         ],
         ctaLabel: "Solicitar limpieza de oficinas",
       },
       {
         slug: "limpieza-tecnica-industrial",
-        title: "Limpieza tecnica industrial",
+        title: "Limpieza técnica industrial",
         summary:
-          "Limpieza especializada para plantas, sectores productivos, areas tecnicas y espacios con requerimientos operativos.",
+          "Limpieza especializada para plantas, sectores productivos, áreas técnicas y espacios con requerimientos operativos.",
         description:
-          "Intervenciones de limpieza orientadas a entornos industriales donde se requiere planificacion, cuidado de instalaciones, coordinacion con operaciones y ejecucion segun condiciones de seguridad y uso.",
+          "Intervenciones de limpieza orientadas a entornos industriales donde se requiere planificación, cuidado de instalaciones, coordinación con operaciones y ejecución según condiciones de seguridad y uso.",
         image: "/images/servicios/limpieza-tecnica-industrial.webp",
         areas: [
           {
             title: "Sectores productivos",
-            summary: "Limpieza de areas de trabajo, circulacion y soporte a la operacion.",
+            summary: "Limpieza de áreas de trabajo, circulación y soporte a la operación.",
           },
           {
-            title: "Areas tecnicas",
-            summary: "Intervenciones cuidadas en espacios con instalaciones, equipos o requerimientos especificos.",
+            title: "Áreas técnicas",
+            summary: "Intervenciones cuidadas en espacios con instalaciones, equipos o requerimientos específicos.",
           },
           {
             title: "Limpiezas puntuales",
@@ -311,23 +311,23 @@ export const serviceBlocks = [
           },
         ],
         subservices: [
-          "Limpieza de areas industriales",
+          "Limpieza de áreas industriales",
           "Limpieza post obra o post mantenimiento",
-          "Ordenamiento de sectores tecnicos",
+          "Ordenamiento de sectores técnicos",
           "Intervenciones programadas en planta",
         ],
         tasks: [
           "Relevar sectores, riesgos y condiciones de trabajo.",
-          "Planificar la intervencion con criterio operativo.",
-          "Ejecutar limpieza tecnica por area y prioridad.",
+          "Planificar la intervención con criterio operativo.",
+          "Ejecutar limpieza técnica por área y prioridad.",
           "Entregar sectores en condiciones de uso.",
         ],
         applications: [
           "Plantas industriales",
-          "Depositos",
+          "Depósitos",
           "Talleres",
-          "Areas tecnicas",
-          "Lineas de trabajo",
+          "Áreas técnicas",
+          "Líneas de trabajo",
           "Espacios post obra",
         ],
         ctaLabel: "Coordinar limpieza industrial",
@@ -336,9 +336,9 @@ export const serviceBlocks = [
   },
   {
     slug: "mantenimiento-gastronomico",
-    title: "Mantenimiento Gastronomico",
+    title: "Mantenimiento Gastronómico",
     summary:
-      "Soporte tecnico para cocinas comerciales, comedores, bares, restaurantes e instituciones que necesitan instalaciones funcionales, limpias y operativas.",
+      "Soporte técnico para cocinas comerciales, comedores, bares, restaurantes e instituciones que necesitan instalaciones funcionales, limpias y operativas.",
     image: "/images/servicios/mantenimiento-gastronomico-image.webp",
     imageAlt: "Equipo de Blessed realizando mantenimiento técnico en cocina industrial y equipamiento gastronómico",
     heroImage: "/images/servicios/mantenimiento-gastronomico-image.webp",
@@ -349,47 +349,47 @@ export const serviceBlocks = [
     services: [
       {
         slug: "mantenimiento-gastronomico",
-        title: "Mantenimiento Gastronomico",
+        title: "Mantenimiento Gastronómico",
         summary:
-          "Servicio integral para restaurantes, cocinas, bares y areas de servicio gastronomico.",
+          "Servicio integral para restaurantes, cocinas, bares y áreas de servicio gastronómico.",
         description:
-          "Mantenimiento orientado a sostener la operacion diaria de espacios gastronomicos mediante reparaciones, adecuaciones, limpieza tecnica, soporte edilicio y coordinacion de intervenciones con baja interferencia operativa.",
+          "Mantenimiento orientado a sostener la operación diaria de espacios gastronómicos mediante reparaciones, adecuaciones, limpieza técnica, soporte edilicio y coordinación de intervenciones con baja interferencia operativa.",
         image: "/images/servicios/gastronomia-image.webp",
         areas: [
           {
-            title: "Cocinas y areas de produccion",
+            title: "Cocinas y áreas de producción",
             summary: "Intervenciones en sectores de trabajo intensivo con foco en continuidad y orden.",
           },
           {
-            title: "Salon y areas de atencion",
-            summary: "Mantenimiento de espacios visibles donde la presentacion y el funcionamiento son criticos.",
+            title: "Salón y áreas de atención",
+            summary: "Mantenimiento de espacios visibles donde la presentación y el funcionamiento son críticos.",
           },
           {
-            title: "Soporte tecnico general",
-            summary: "Resolucion de necesidades edilicias, electricas, metalicas y de climatizacion asociadas al local.",
+            title: "Soporte técnico general",
+            summary: "Resolución de necesidades edilicias, eléctricas, metálicas y de climatización asociadas al local.",
           },
         ],
         subservices: [
-          "Mantenimiento edilicio gastronomico",
-          "Soporte electrico y de instalaciones",
-          "Climatizacion y ventilacion",
+          "Mantenimiento edilicio gastronómico",
+          "Soporte eléctrico y de instalaciones",
+          "Climatización y ventilación",
           "Reparaciones y adecuaciones operativas",
         ],
         tasks: [
-          "Relevar puntos criticos del local y su operacion.",
+          "Relevar puntos críticos del local y su operación.",
           "Ejecutar tareas preventivas y correctivas.",
-          "Coordinar intervenciones segun horarios de servicio.",
+          "Coordinar intervenciones según horarios de servicio.",
           "Resolver reparaciones urgentes o mejoras programadas.",
         ],
         applications: [
           "Restaurantes",
           "Bares",
           "Cocinas industriales",
-          "Hoteles con servicio gastronomico",
+          "Hoteles con servicio gastronómico",
           "Comedores",
-          "Locales de atencion al publico",
+          "Locales de atención al público",
         ],
-        ctaLabel: "Solicitar mantenimiento gastronomico",
+        ctaLabel: "Solicitar mantenimiento gastronómico",
       },
     ],
   },

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle2, Factory, MessageCircle, Utensils, Wrench } from "lucide-react"
 import { BackButton } from "@/components/back-button"
 import { ImageWithFallback } from "@/components/image-with-fallback"
+import { Reveal } from "@/components/reveal"
 import { companyInfo } from "@/components/site-content"
 import { serviceBlocks } from "@/data/services"
 
@@ -12,9 +13,9 @@ const serviceIcons = {
 } as const
 
 const serviceTags = {
-  "mantenimiento-y-montajes": "Mantenimiento tecnico",
+  "mantenimiento-y-montajes": "Mantenimiento técnico",
   "limpieza-industrial": "Limpieza operativa",
-  "mantenimiento-gastronomico": "Soporte gastronomico",
+  "mantenimiento-gastronomico": "Soporte gastronómico",
 } as const
 
 export default function ServiciosPage() {
@@ -24,6 +25,7 @@ export default function ServiciosPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(213,37,43,0.18),transparent_30%),linear-gradient(135deg,rgba(23,26,25,1),rgba(39,43,41,0.94)_56%,rgba(23,26,25,1))]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_360px] lg:items-end lg:py-16">
+          <Reveal className="contents" y={18}>
           <header>
             <BackButton
               fallbackHref="/"
@@ -31,18 +33,18 @@ export default function ServiciosPage() {
             />
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-soft">Blessed Soluciones Integrales</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Servicios tecnicos para operacion industrial, comercial e institucional
+              Servicios técnicos para operación industrial, comercial e institucional
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-white/72">
               Servicios organizados por bloques operativos para responder a necesidades de mantenimiento, montaje,
-              limpieza tecnica y soporte especializado en empresas, industrias, comercios e instituciones.
+              limpieza técnica y soporte especializado en empresas, industrias, comercios e instituciones.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contacto"
                 className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_rgba(213,37,43,0.22)] transition hover:bg-primary/90"
               >
-                Solicitar evaluacion tecnica
+                Solicitar evaluación técnica
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
@@ -56,7 +58,9 @@ export default function ServiciosPage() {
               </Link>
             </div>
           </header>
+          </Reveal>
 
+          <Reveal delay={120} y={18}>
           <aside className="rounded-xl border border-white/12 bg-white/[0.06] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary-soft">Bloques operativos</p>
             <div className="mt-4 grid gap-3">
@@ -83,27 +87,28 @@ export default function ServiciosPage() {
               })}
             </div>
           </aside>
+          </Reveal>
         </div>
       </section>
 
       <section className="section-band py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="max-w-3xl">
+          <Reveal className="max-w-3xl" y={18}>
             <p className="section-kicker">Alcance operativo</p>
-            <h2 className="section-title mt-2">Tres lineas de servicio para sostener instalaciones y continuidad de trabajo</h2>
+            <h2 className="section-title mt-2">Tres líneas de servicio para sostener instalaciones y continuidad de trabajo</h2>
             <p className="section-copy mt-4">
-              Cada bloque concentra tareas, recursos y aplicaciones frecuentes para coordinar intervenciones tecnicas con un
+              Cada bloque concentra tareas, recursos y aplicaciones frecuentes para coordinar intervenciones técnicas con un
               alcance claro desde el primer relevamiento.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {serviceBlocks.map((block) => {
+            {serviceBlocks.map((block, index) => {
               const Icon = serviceIcons[block.slug]
 
               return (
+                <Reveal key={block.slug} delay={index * 90} y={24}>
                 <article
-                  key={block.slug}
                   className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,31,31,0.11)]"
                 >
                   <div className="relative">
@@ -147,13 +152,14 @@ export default function ServiciosPage() {
                     </Link>
                   </div>
                 </article>
+                </Reveal>
               )
             })}
           </div>
 
-          <div className="mt-10 rounded-xl border border-border bg-white p-6 shadow-[0_18px_48px_rgba(31,31,31,0.06)] lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <Reveal className="mt-10 rounded-xl border border-border bg-white p-6 shadow-[0_18px_48px_rgba(31,31,31,0.06)] lg:flex lg:items-center lg:justify-between lg:gap-8" y={18}>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">Coordinacion tecnica</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">Coordinación técnica</p>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight text-graphite">Definir alcance, prioridad y recursos antes de intervenir</h2>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
                 Blessed coordina servicios a partir del relevamiento del lugar, la criticidad operativa y las condiciones reales
@@ -167,7 +173,7 @@ export default function ServiciosPage() {
               Coordinar relevamiento
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

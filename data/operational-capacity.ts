@@ -64,48 +64,49 @@ export const vehicles = [
 
 
 
+
 export const equipmentCategories = [
   {
-    title: "Herramientas electricas",
-    description: "Herramientas de apoyo para tareas de montaje, perforacion, corte, fijacion y mantenimiento.",
-    items: ["Herramientas manuales y electricas", "Elementos de medicion", "Accesorios de instalacion"],
+    title: "Herramientas eléctricas",
+    description: "Herramientas de apoyo para tareas de montaje, perforación, corte, fijación y mantenimiento.",
+    items: ["Herramientas manuales y eléctricas", "Elementos de medición", "Accesorios de instalación"],
   },
   {
-    title: "Metalmecanica",
-    description: "Recursos para fabricacion, ajuste, reparacion y montaje de soluciones metalicas.",
-    items: ["Herramientas de corte y ajuste", "Elementos de montaje", "Insumos de reparacion"],
+    title: "Metalmecánica",
+    description: "Recursos para fabricación, ajuste, reparación y montaje de soluciones metálicas.",
+    items: ["Herramientas de corte y ajuste", "Elementos de montaje", "Insumos de reparación"],
   },
   {
-    title: "Limpieza tecnica",
-    description: "Equipamiento e insumos destinados a limpieza de oficinas, areas tecnicas y sectores industriales.",
-    items: ["Elementos de limpieza tecnica", "Insumos operativos", "Recursos para intervenciones programadas"],
+    title: "Limpieza técnica",
+    description: "Equipamiento e insumos destinados a limpieza de oficinas, áreas técnicas y sectores industriales.",
+    items: ["Elementos de limpieza técnica", "Insumos operativos", "Recursos para intervenciones programadas"],
   },
   {
-    title: "Climatizacion",
-    description: "Herramientas y elementos de soporte para instalacion, revision y mantenimiento de equipos.",
-    items: ["Herramientas de instalacion", "Elementos de control", "Insumos de mantenimiento"],
+    title: "Climatización",
+    description: "Herramientas y elementos de soporte para instalación, revisión y mantenimiento de equipos.",
+    items: ["Herramientas de instalación", "Elementos de control", "Insumos de mantenimiento"],
   },
   {
-    title: "Mantenimiento gastronomico",
-    description: "Recursos para intervenciones en cocinas, salones, areas de servicio y espacios de atencion.",
-    items: ["Herramientas de mantenimiento", "Elementos de adecuacion", "Soporte para reparaciones"],
+    title: "Mantenimiento gastronómico",
+    description: "Recursos para intervenciones en cocinas, salones, áreas de servicio y espacios de atención.",
+    items: ["Herramientas de mantenimiento", "Elementos de adecuación", "Soporte para reparaciones"],
   },
   {
     title: "Elementos de seguridad",
-    description: "Elementos de proteccion y apoyo para ejecutar tareas en condiciones de trabajo controladas.",
-    items: ["Personal capacitado", "Senalizacion de trabajo", "Uso de EPP obligatorio"],
+    description: "Elementos de protección y apoyo para ejecutar tareas en condiciones de trabajo controladas.",
+    items: ["Personal capacitado", "Señalización de trabajo", "Uso de EPP obligatorio"],
   },
   {
     title: "Insumos y apoyo operativo",
     description: "Materiales y recursos auxiliares para sostener tareas en campo y resolver necesidades puntuales.",
-    items: ["Insumos generales", "Materiales auxiliares", "Recursos de apoyo logistico"],
+    items: ["Insumos generales", "Materiales auxiliares", "Recursos de apoyo logístico"],
   },
 ] satisfies EquipmentCategory[]
 
 export const logistics = [
   {
-    title: "Coordinacion de tareas",
-    description: "Organizacion de recursos, horarios y prioridades segun el tipo de servicio solicitado.",
+    title: "Coordinación de tareas",
+    description: "Organización de recursos, horarios y prioridades según el tipo de servicio solicitado.",
   },
   {
     title: "Traslado de equipos e insumos",
@@ -113,10 +114,10 @@ export const logistics = [
   },
   {
     title: "Intervenciones programadas",
-    description: "Planificacion de tareas para reducir interferencias con la operacion del cliente.",
+    description: "Planificación de tareas para reducir interferencias con la operación del cliente.",
   },
   {
     title: "Respuesta en campo",
-    description: "Soporte operativo para mantenimiento, montajes, limpieza tecnica y servicios gastronomicos.",
+    description: "Soporte operativo para mantenimiento, montajes, limpieza técnica y servicios gastronómicos.",
   },
 ] satisfies LogisticsPoint[]

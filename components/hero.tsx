@@ -12,7 +12,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,17,16,0.94),rgba(15,17,16,0.76)_45%,rgba(15,17,16,0.36))]" />
       <ImageWithFallback
         src="/images/fondo-hero-desktop.webp"
-        alt="Operacion industrial de Blessed Soluciones Integrales"
+        alt="Operación industrial de Blessed Soluciones Integrales"
         fill
         priority
         sizes="100vw"
@@ -26,7 +26,7 @@ export function Hero() {
           <Reveal y={18}>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-secondary-soft">{companyInfo.name}</p>
             <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Servicios tecnicos para operaciones industriales, edilicias y gastronomicas.
+              Servicios técnicos para operaciones industriales, edilicias y gastronómicas.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
               Mantenimiento, montajes, limpieza industrial y soporte operativo con estructura preparada para trabajos en campo.

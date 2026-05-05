@@ -12,7 +12,7 @@ export function Services() {
           <p className="section-kicker">Servicios</p>
           <h2 className="section-title mt-3">Bloques principales de trabajo</h2>
           <p className="section-copy mt-4">
-            La estructura de servicios se organiza en tres bloques operativos. Cada bloque tiene una pagina interna con alcance, tareas, aplicaciones y proceso de trabajo.
+            La estructura de servicios se organiza en tres bloques operativos. Cada bloque tiene una página interna con alcance, tareas, aplicaciones y proceso de trabajo.
           </p>
         </Reveal>
 
@@ -37,7 +37,7 @@ export function Services() {
                     scroll
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
                   >
-                    Ver detalle tecnico
+                    Ver detalle técnico
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

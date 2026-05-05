@@ -20,6 +20,7 @@ export function ImageWithFallback({
   const src = typeof props.src === "string" ? props.src : ""
   const publicPath = src.startsWith("/") ? path.join(process.cwd(), "public", src) : ""
   const canRenderImage = !src.startsWith("/") || existsSync(publicPath)
+  const quality = props.quality ?? (props.priority ? 90 : 72)
 
   return (
     <div className={cn("relative overflow-hidden bg-[#2f3332]", wrapperClassName)}>
@@ -27,6 +28,8 @@ export function ImageWithFallback({
         <Image
           {...props}
           alt={alt}
+          decoding="async"
+          quality={quality}
           className={cn("object-cover", className)}
         />
       ) : (

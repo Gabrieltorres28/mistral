@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { BackButton } from "@/components/back-button"
+import { Reveal } from "@/components/reveal"
 import { companyInfo } from "@/components/site-content"
 
 export default function ContactoPage() {
@@ -10,6 +11,7 @@ export default function ContactoPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(213,37,43,0.18),transparent_30%),linear-gradient(135deg,rgba(23,26,25,1),rgba(39,43,41,0.94)_56%,rgba(23,26,25,1))]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
         <div className="section-shell relative grid gap-8 py-10 sm:py-14 lg:grid-cols-[1fr_360px] lg:items-end lg:py-16">
+          <Reveal className="contents" y={18}>
           <header>
             <BackButton
               fallbackHref="/"
@@ -23,7 +25,7 @@ export default function ContactoPage() {
             </div>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contacto operativo</h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-white/74">
-              Canales directos para consultas, coordinacion de tareas y solicitudes de servicio.
+              Canales directos para consultas, coordinación de tareas y solicitudes de servicio.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -44,23 +46,26 @@ export default function ContactoPage() {
               </Link>
             </div>
           </header>
+          </Reveal>
 
+          <Reveal delay={120} y={18}>
           <aside className="rounded-xl border border-white/12 bg-white/8 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm">
             <MapPin className="h-5 w-5 text-secondary-soft" />
             <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-secondary-soft">Base operativa</p>
             <p className="mt-3 text-sm leading-7 text-white/70">{companyInfo.location}</p>
             <p className="mt-5 text-sm leading-7 text-white/62">
-              Para solicitar una intervencion, conviene informar ubicacion, tipo de instalacion, criticidad operativa y servicio requerido.
+              Para solicitar una intervención, conviene informar ubicación, tipo de instalación, criticidad operativa y servicio requerido.
             </p>
           </aside>
+          </Reveal>
         </div>
       </section>
 
       <section className="section-shell grid gap-5 py-12 lg:grid-cols-[1fr_0.85fr] lg:py-16">
-        <div className="grid gap-4">
+        <Reveal className="grid gap-4" y={18}>
           <Link href={companyInfo.phoneHref} className="rounded-xl border border-border bg-white p-5 shadow-[0_16px_38px_rgba(31,31,31,0.05)]">
             <Phone className="h-5 w-5 text-secondary" />
-            <span className="mt-4 block text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">Telefono</span>
+            <span className="mt-4 block text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">Teléfono</span>
             <span className="mt-2 block text-lg font-semibold text-graphite">{companyInfo.phoneLabel}</span>
           </Link>
           <Link href={companyInfo.emailHref} className="rounded-xl border border-border bg-white p-5 shadow-[0_16px_38px_rgba(31,31,31,0.05)]">
@@ -77,16 +82,18 @@ export default function ContactoPage() {
             <MessageCircle className="h-4 w-4" />
             Escribir por WhatsApp
           </Link>
-        </div>
+        </Reveal>
 
+        <Reveal delay={120} y={18}>
         <aside className="rounded-xl border border-border bg-white p-6 shadow-[0_16px_38px_rgba(31,31,31,0.05)]">
           <MapPin className="h-5 w-5 text-secondary" />
-          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">Ubicacion</p>
+          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">Ubicación</p>
           <p className="mt-3 text-base leading-7 text-graphite">{companyInfo.location}</p>
           <p className="mt-5 text-sm leading-7 text-muted-foreground">
-            Para solicitar una intervencion, conviene informar ubicacion, tipo de instalacion, criticidad operativa y servicio requerido.
+            Para solicitar una intervención, conviene informar ubicación, tipo de instalación, criticidad operativa y servicio requerido.
           </p>
         </aside>
+        </Reveal>
       </section>
     </main>
   )

@@ -8,10 +8,11 @@ type RevealProps = {
   className?: string
   delay?: number
   y?: number
+  as?: "div" | "section" | "article" | "li"
 }
 
-export function Reveal({ children, className, delay = 0, y = 24 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null)
+export function Reveal({ children, className, delay = 0, y = 24, as: Component = "div" }: RevealProps) {
+  const ref = useRef<HTMLElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -43,8 +44,8 @@ export function Reveal({ children, className, delay = 0, y = 24 }: RevealProps) 
   }, [])
 
   return (
-    <div
-      ref={ref}
+    <Component
+      ref={ref as never}
       className={cn(
         "motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none",
         className,
@@ -60,6 +61,6 @@ export function Reveal({ children, className, delay = 0, y = 24 }: RevealProps) 
       }}
     >
       {children}
-    </div>
+    </Component>
   )
 }

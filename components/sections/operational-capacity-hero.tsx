@@ -7,7 +7,7 @@ export function OperationalCapacityHero() {
     <section className="relative overflow-hidden bg-[#202322] text-white">
       <ImageWithFallback
         src="/images/vehiculos/capacidadoperativa-fondo-desktop.webp"
-        alt="Movil operativo de Blessed Soluciones Integrales con herramientas y equipamiento para servicios industriales"
+        alt="Móvil operativo de Blessed Soluciones Integrales con herramientas y equipamiento para servicios industriales"
         fill
         priority
         sizes="100vw"
@@ -19,7 +19,7 @@ export function OperationalCapacityHero() {
 
       <ImageWithFallback
         src="/images/vehiculos/capacidadoperativa-fondo-mobile.webp"
-        alt="Movil operativo de Blessed Soluciones Integrales con herramientas y equipamiento para servicios en campo"
+        alt="Móvil operativo de Blessed Soluciones Integrales con herramientas y equipamiento para servicios en campo"
         fill
         sizes="100vw"
         fallbackLabel="Capacidad operativa"

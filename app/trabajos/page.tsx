@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ImageWithFallback } from "@/components/image-with-fallback"
+import { Reveal } from "@/components/reveal"
 import { workSamples } from "@/components/site-content"
 import { services } from "@/data/services"
 
@@ -7,18 +8,19 @@ export default function TrabajosPage() {
   return (
     <main>
       <section className="bg-[#202322] text-white">
-        <div className="section-shell py-12 sm:py-16">
+        <Reveal className="section-shell py-12 sm:py-16" y={18}>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-soft">Trabajos</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Areas de aplicacion</h1>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Áreas de aplicación</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-white/70">
-            Vista preliminar de aplicaciones operativas derivadas de la estructura de servicios. Los casos reales deben cargarse con informacion verificada.
+            Vista preliminar de aplicaciones operativas derivadas de la estructura de servicios. Los casos reales deben cargarse con información verificada.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section-shell grid gap-5 py-12 md:grid-cols-2 lg:py-16">
-        {workSamples.map((work) => (
-          <article key={work.title} className="overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_46px_rgba(31,31,31,0.07)]">
+        {workSamples.map((work, index) => (
+          <Reveal key={work.title} delay={index * 80} y={22}>
+          <article className="overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_46px_rgba(31,31,31,0.07)]">
             <ImageWithFallback
               src={work.image}
               alt={work.title}
@@ -34,11 +36,12 @@ export default function TrabajosPage() {
               <p className="mt-3 text-sm leading-7 text-muted-foreground">{work.description}</p>
             </div>
           </article>
+          </Reveal>
         ))}
       </section>
 
       <section className="section-shell pb-16">
-        <div className="rounded-xl border border-border bg-white p-6 shadow-[0_16px_38px_rgba(31,31,31,0.05)]">
+        <Reveal className="rounded-xl border border-border bg-white p-6 shadow-[0_16px_38px_rgba(31,31,31,0.05)]" y={18}>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="section-kicker">Aplicaciones</p>
@@ -58,7 +61,7 @@ export default function TrabajosPage() {
           </article>
         ))}
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   )

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ClipboardCheck, ShieldCheck, Truck, Utensils, Wrench } from "lucide-react"
 import { ImageWithFallback } from "@/components/image-with-fallback"
+import { Reveal } from "@/components/reveal"
 import { OperationalCapacityHero } from "@/components/sections/operational-capacity-hero"
 import { companyInfo } from "@/components/site-content"
 import { equipmentCategories, logistics, vehicles } from "@/data/operational-capacity"
@@ -14,7 +15,7 @@ export default function CapacidadOperativaPage() {
 
       <section id="moviles" className="section-band py-12 lg:py-16">
         <div className="section-shell">
-          <div className="flex flex-col gap-3 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
+          <Reveal className="flex flex-col gap-3 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between" y={18}>
             <div>
               <p className="section-kicker">Móviles operativos</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-graphite">Unidades para trabajo en campo</h2>
@@ -22,11 +23,12 @@ export default function CapacidadOperativaPage() {
             <p className="max-w-xl text-sm leading-7 text-muted-foreground">
               Unidades destinadas a supervisión, asistencia técnica, logística operativa, izaje y soporte en terreno.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((vehicle) => (
-              <article key={vehicle.image} className="industrial-panel overflow-hidden">
+            {vehicles.map((vehicle, index) => (
+              <Reveal key={vehicle.image} delay={index * 60} y={22}>
+              <article className="industrial-panel overflow-hidden">
                 <ImageWithFallback
                   src={vehicle.image}
                   alt={vehicle.title}
@@ -61,6 +63,7 @@ export default function CapacidadOperativaPage() {
                   </p>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -69,20 +72,21 @@ export default function CapacidadOperativaPage() {
       <section id="equipamiento" className="py-12 lg:py-16">
         <div className="section-shell grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <section>
-            <div className="border-b border-border pb-5">
+            <Reveal className="border-b border-border pb-5" y={18}>
               <p className="section-kicker">Herramientas y equipamiento</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-graphite">Recursos por tipo de intervención</h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
                 Equipamiento técnico organizado por tipo de intervención para responder a tareas de mantenimiento, montaje,
                 limpieza y asistencia operativa.
               </p>
-            </div>
+            </Reveal>
 
             <div className="mt-6 grid gap-4">
               {equipmentCategories.map((category, index) => {
                 const Icon = equipmentIcons[index] ?? Wrench
                 return (
-                <article key={category.title} className="industrial-panel p-5">
+                <Reveal key={category.title} delay={index * 60} y={20}>
+                <article className="industrial-panel p-5">
                   <div className="flex items-start gap-4">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       <Icon className="h-5 w-5" />
@@ -104,23 +108,25 @@ export default function CapacidadOperativaPage() {
                     ))}
                   </ul>
                 </article>
+                </Reveal>
                 )
               })}
             </div>
           </section>
 
           <section>
-            <div className="border-b border-border pb-5">
+            <Reveal className="border-b border-border pb-5" y={18}>
               <p className="section-kicker">Logística de trabajo</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-graphite">Organización operativa</h2>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">
                 Coordinación de recursos, personal y movilidad para ejecutar trabajos programados y respuestas en campo.
               </p>
-            </div>
+            </Reveal>
 
             <div className="mt-6 grid gap-4">
               {logistics.map((item, index) => (
-                <article key={item.title} className="corporate-dark-panel p-5">
+                <Reveal key={item.title} delay={index * 70} y={20}>
+                <article className="corporate-dark-panel p-5">
                   <span className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/10 text-sm font-semibold text-white">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -131,6 +137,7 @@ export default function CapacidadOperativaPage() {
                     {item.description}
                   </p>
                 </article>
+                </Reveal>
               ))}
             </div>
           </section>
@@ -139,7 +146,7 @@ export default function CapacidadOperativaPage() {
 
       <section className="bg-[#202322] py-14 text-white lg:py-16">
         <div className="section-shell">
-          <div className="max-w-3xl">
+          <Reveal className="max-w-3xl" y={18}>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-soft">Consulta técnica</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Evaluación operativa y presupuesto
@@ -163,7 +170,7 @@ export default function CapacidadOperativaPage() {
                 Ver datos de contacto
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

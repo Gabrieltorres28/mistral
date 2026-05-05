@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, ClipboardCheck, Factory, Truck, Utensils, Wrench } from "lucide-react"
 import { ImageWithFallback } from "@/components/image-with-fallback"
+import { Reveal } from "@/components/reveal"
 import { companyInfo, workSamples } from "@/components/site-content"
 import { equipmentCategories, logistics, vehicles } from "@/data/operational-capacity"
 import { serviceBlocks } from "@/data/services"
@@ -18,9 +19,9 @@ const serviceIconBySlug = {
 } as const
 
 const serviceTagBySlug = {
-  "mantenimiento-y-montajes": "Mantenimiento tecnico",
+  "mantenimiento-y-montajes": "Mantenimiento técnico",
   "limpieza-industrial": "Limpieza operativa",
-  "mantenimiento-gastronomico": "Soporte gastronomico",
+  "mantenimiento-gastronomico": "Soporte gastronómico",
 } as const
 
 const capabilityItems = [
@@ -31,12 +32,12 @@ const capabilityItems = [
   },
   {
     title: "Intervenciones en entornos productivos",
-    text: "Alcances preparados para plantas, depositos, sectores tecnicos, edificios operativos y espacios de servicio.",
+    text: "Alcances preparados para plantas, depósitos, sectores técnicos, edificios operativos y espacios de servicio.",
     icon: Factory,
   },
   {
-    title: "Coordinacion por prioridad",
-    text: "Organizacion de tareas segun criticidad, ubicacion, condiciones del espacio y horarios disponibles.",
+    title: "Coordinación por prioridad",
+    text: "Organización de tareas según criticidad, ubicación, condiciones del espacio y horarios disponibles.",
     icon: ClipboardCheck,
   },
   {
@@ -47,11 +48,11 @@ const capabilityItems = [
 ]
 
 const processSteps = [
-  "Relevamiento del lugar, actividad y necesidad tecnica.",
-  "Definicion del alcance, prioridades y condiciones de intervencion.",
-  "Coordinacion de tareas, recursos y horarios de trabajo.",
-  "Ejecucion del servicio con seguimiento operativo.",
-  "Revision final y registro de necesidades detectadas.",
+  "Relevamiento del lugar, actividad y necesidad técnica.",
+  "Definición del alcance, prioridades y condiciones de intervención.",
+  "Coordinación de tareas, recursos y horarios de trabajo.",
+  "Ejecución del servicio con seguimiento operativo.",
+  "Revisión final y registro de necesidades detectadas.",
 ]
 
 export function HeroIndustrial() {
@@ -80,13 +81,13 @@ export function HeroIndustrial() {
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,19,18,0.98)_0%,rgba(17,19,18,0.92)_38%,rgba(17,19,18,0.62)_70%,rgba(17,19,18,0.42)_100%)] md:bg-[linear-gradient(90deg,rgba(17,19,18,0.98),rgba(17,19,18,0.88)_40%,rgba(17,19,18,0.42)_74%,rgba(17,19,18,0.2))]" />
       <div className="section-shell relative flex min-h-[680px] items-start py-14 sm:min-h-[640px] sm:py-16 md:items-center lg:min-h-[620px] lg:py-24">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl" y={18}>
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-secondary-soft">{companyInfo.name}</p>
           <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Servicios tecnicos para mantenimiento, montajes, limpieza industrial y espacios gastronomicos.
+            Servicios técnicos para mantenimiento, montajes, limpieza industrial y espacios gastronómicos.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-            Estructura operativa organizada en tres bloques de servicio, con paginas internas para revisar alcances, tareas y aplicaciones.
+            Estructura operativa organizada en tres bloques de servicio, con páginas internas para revisar alcances, tareas y aplicaciones.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -103,7 +104,7 @@ export function HeroIndustrial() {
               Contacto operativo
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -113,18 +114,18 @@ export function TrustBar() {
   return (
     <section className="border-b border-border bg-white">
       <div className="section-shell grid gap-4 py-6 md:grid-cols-3">
-        <div>
+        <Reveal y={14}>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Base operativa</p>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">{companyInfo.location}</p>
-        </div>
-        <div>
+        </Reveal>
+        <Reveal delay={80} y={14}>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Servicios</p>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">Tres bloques principales con alcance tecnico separado.</p>
-        </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Documentacion visual</p>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground">Tres bloques principales con alcance técnico separado.</p>
+        </Reveal>
+        <Reveal delay={160} y={14}>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Documentación visual</p>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">Móviles, herramientas y logística coordinada para servicios en campo.</p>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -134,26 +135,27 @@ export function ServicePillars() {
   return (
     <section className="py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" y={18}>
           <div className="max-w-3xl">
             <p className="section-kicker">Servicios principales</p>
             <h2 className="section-title mt-3">Pilares operativos</h2>
             <p className="section-copy mt-4">
-              Cada bloque agrupa servicios, areas de trabajo, tareas y aplicaciones para consulta tecnica directa.
+              Cada bloque agrupa servicios, áreas de trabajo, tareas y aplicaciones para consulta técnica directa.
             </p>
           </div>
           <Link href="/servicios" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-            Indice general
+            Índice general
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </Reveal>
 
         <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
-          {serviceBlocks.map((block) => {
+          {serviceBlocks.map((block, index) => {
             const Icon = serviceIconBySlug[block.slug as keyof typeof serviceIconBySlug] ?? Wrench
 
             return (
-            <article key={block.slug} className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,31,31,0.11)]">
+            <Reveal key={block.slug} delay={index * 90} y={24}>
+            <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,31,31,0.11)]">
               <div className="relative">
                 <ImageWithFallback
                   src={block.image}
@@ -192,6 +194,7 @@ export function ServicePillars() {
                 </Link>
               </div>
             </article>
+            </Reveal>
             )
           })}
         </div>
@@ -203,7 +206,7 @@ export function ServicePillars() {
 export function CapabilityGrid() {
   const operationalSummary = [
     {
-      title: "Moviles operativos",
+      title: "Móviles operativos",
       text: `${vehicles.length} unidades destinadas a supervisión, asistencia técnica, logística operativa, izaje y soporte en terreno.`,
       icon: Truck,
     },
@@ -213,7 +216,7 @@ export function CapabilityGrid() {
       icon: Wrench,
     },
     {
-      title: "Logistica de trabajo",
+      title: "Logística de trabajo",
       text: `${logistics.length} ejes de coordinación para recursos, personal, movilidad, trabajos programados y respuestas en campo.`,
       icon: ClipboardCheck,
     },
@@ -222,41 +225,45 @@ export function CapabilityGrid() {
   return (
     <section className="border-y border-border bg-white py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl" y={18}>
           <p className="section-kicker">Capacidad operativa</p>
-          <h2 className="section-title mt-3">Organizacion para trabajo tecnico</h2>
-        </div>
+          <h2 className="section-title mt-3">Organización para trabajo técnico</h2>
+        </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {capabilityItems.map((item) => {
+          {capabilityItems.map((item, index) => {
             const Icon = item.icon
             return (
-              <article key={item.title} className="rounded-xl border border-border bg-surface-soft p-5">
+              <Reveal key={item.title} delay={index * 70} y={20}>
+              <article className="rounded-xl border border-border bg-surface-soft p-5">
                 <Icon className="h-5 w-5 text-primary" />
                 <h3 className="mt-4 text-lg font-semibold text-graphite">{item.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
               </article>
+              </Reveal>
             )
           })}
         </div>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
-          {operationalSummary.map((item) => {
+          {operationalSummary.map((item, index) => {
             const Icon = item.icon
             return (
-              <article key={item.title} className="industrial-panel p-5">
+              <Reveal key={item.title} delay={index * 80} y={20}>
+              <article className="industrial-panel p-5">
                 <Icon className="h-5 w-5 text-primary" />
                 <h3 className="mt-4 text-lg font-semibold text-graphite">{item.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
               </article>
+              </Reveal>
             )
           })}
         </div>
 
-        <div className="mt-8">
+        <Reveal className="mt-8" y={16}>
           <Link href="/capacidad-operativa" className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white">
             Ver capacidad operativa completa
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -266,26 +273,27 @@ export function OperationalFleetSection() {
   return (
     <section className="bg-[#202322] py-16 text-white sm:py-20 lg:py-24">
       <div className="section-shell">
-        <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-soft">Moviles y equipamiento</p>
+        <Reveal className="max-w-3xl" y={18}>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-soft">Móviles y equipamiento</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Movilidad y recursos para trabajos en campo
           </h2>
           <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base">
             Unidades y recursos operativos para asistir servicios técnicos, mantenimiento, montajes, limpieza industrial e izaje.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {vehicles.slice(0, 3).map((asset) => (
-            <article key={asset.image} className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
+          {vehicles.slice(0, 3).map((asset, index) => (
+            <Reveal key={asset.image} delay={index * 80} y={22}>
+            <article className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
               <ImageWithFallback
                 src={asset.image}
                 alt={asset.title}
                 fill
                 sizes="(max-width: 767px) 100vw, 33vw"
                 fallbackLabel={asset.title}
-                fallbackDetail="Movil/equipamiento pendiente"
+                fallbackDetail="Móvil/equipamiento pendiente"
                 wrapperClassName="aspect-[4/3]"
               />
               <div className="p-5">
@@ -294,6 +302,7 @@ export function OperationalFleetSection() {
                 <p className="mt-2 text-sm leading-6 text-white/64">{asset.description}</p>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -305,18 +314,24 @@ export function ProcessSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl" y={18}>
           <p className="section-kicker">Proceso</p>
           <h2 className="section-title mt-3">Secuencia de trabajo</h2>
-        </div>
+        </Reveal>
         <ol className="mt-10 grid gap-3">
           {processSteps.map((step, index) => (
-            <li key={step} className="grid gap-4 rounded-xl border border-border bg-white p-5 shadow-[0_12px_30px_rgba(31,31,31,0.04)] sm:grid-cols-[52px_1fr]">
+            <Reveal
+              key={step}
+              as="li"
+              delay={index * 70}
+              y={18}
+              className="grid gap-4 rounded-xl border border-border bg-white p-5 shadow-[0_12px_30px_rgba(31,31,31,0.04)] sm:grid-cols-[52px_1fr]"
+            >
               <span className="flex h-12 w-12 items-center justify-center rounded-md bg-[#202322] text-sm font-semibold text-white">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <p className="text-sm leading-7 text-muted-foreground">{step}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
@@ -328,7 +343,7 @@ export function GalleryPreview() {
   return (
     <section className="border-y border-border bg-white py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" y={18}>
           <div className="max-w-3xl">
             <p className="section-kicker">Trabajos</p>
             <h2 className="section-title mt-3">Registro de intervenciones</h2>
@@ -338,11 +353,12 @@ export function GalleryPreview() {
             Ver trabajos
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {workSamples.slice(0, 4).map((work) => (
-            <article key={work.title} className="overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_46px_rgba(31,31,31,0.07)]">
+          {workSamples.slice(0, 4).map((work, index) => (
+            <Reveal key={work.title} delay={index * 80} y={22}>
+            <article className="overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_46px_rgba(31,31,31,0.07)]">
               <ImageWithFallback
                 src={work.image}
                 alt={work.title}
@@ -357,6 +373,7 @@ export function GalleryPreview() {
                 <h3 className="mt-2 text-lg font-semibold text-graphite">{work.title}</h3>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -368,11 +385,11 @@ export function FinalCTA() {
   return (
     <section className="bg-[#202322] py-16 text-white sm:py-20">
       <div className="section-shell">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl" y={18}>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-soft">Contacto</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Coordinar una consulta tecnica</h2>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Coordinar una consulta técnica</h2>
           <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base">
-            Para solicitar una intervencion, conviene informar ubicacion, tipo de instalacion, criticidad operativa y servicio requerido.
+            Para solicitar una intervención, conviene informar ubicación, tipo de instalación, criticidad operativa y servicio requerido.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/contacto" className="inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white">
@@ -382,7 +399,7 @@ export function FinalCTA() {
               Revisar servicios
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
