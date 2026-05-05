@@ -125,7 +125,7 @@ function ServiceAreaCards({ services }: { services: BlessedService[] }) {
                   sizes="(max-width: 1023px) 100vw, 300px"
                   fallbackLabel={service.title}
                   fallbackDetail="Imagen pendiente"
-                  wrapperClassName="aspect-[4/5] h-full min-h-[260px] sm:aspect-[4/3] lg:aspect-auto"
+                  wrapperClassName="aspect-[4/3] min-h-[220px] lg:h-full lg:aspect-auto"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/48 via-transparent to-transparent" />
