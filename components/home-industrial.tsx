@@ -154,7 +154,7 @@ export function ServicePillars() {
             const Icon = serviceIconBySlug[block.slug as keyof typeof serviceIconBySlug] ?? Wrench
 
             return (
-            <Reveal key={block.slug} delay={index * 90} y={24}>
+            <Reveal key={block.slug} delay={index * 90} y={24} className="h-full">
             <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,31,31,0.11)]">
               <div className="relative">
                 <ImageWithFallback
@@ -164,7 +164,7 @@ export function ServicePillars() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   fallbackLabel={block.title}
                   fallbackDetail="Imagen pendiente"
-                  wrapperClassName="aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5]"
+                  wrapperClassName="aspect-[4/3]"
                   className="object-cover object-center transition duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/12 to-transparent" />
